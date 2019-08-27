@@ -85,7 +85,6 @@ class Accordion : UIView {
     
 }
 
-@available(iOS 9.0, *)
 extension Accordion {
     
     fileprivate var paneSize: CGSize {
