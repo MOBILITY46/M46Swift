@@ -21,7 +21,7 @@ public final class DiskStore<T> {
     var onRemove: ((String) -> Void)?
     private let transformer: Transformer<T>
     
-    convenience init(config: DiskConfig,
+    public convenience init(config: DiskConfig,
                      transformer: Transformer<T>,
                      manager: FileManager = FileManager.default) throws {
         let url: URL
@@ -48,7 +48,7 @@ public final class DiskStore<T> {
         try createDirectory()
     }
     
-    required init(config: DiskConfig,
+    public required init(config: DiskConfig,
                   path: String,
                   transformer: Transformer<T>,
                   manager: FileManager) {
@@ -63,7 +63,7 @@ typealias ResourceObject = (url: Foundation.URL, resourceValues: URLResourceValu
 
 extension DiskStore : StoreAware {
 
-    func entry(forKey key: String) throws -> Entry<T> {
+    public func entry(forKey key: String) throws -> Entry<T> {
         let filePath = makeFilePath(for: key)
         let data = try Data(contentsOf: URL(fileURLWithPath: filePath))
         let attributes = try manager.attributesOfItem(atPath: filePath)
@@ -77,7 +77,7 @@ extension DiskStore : StoreAware {
         return Entry(object: object, expiry: Expiry.date(date), filePath: filePath)
     }
     
-    func add(_ object: T, forKey key: String, expiry: Expiry?) throws {
+    public func add(_ object: T, forKey key: String, expiry: Expiry?) throws {
         let expiry = expiry ?? config.expiry
         let data = try transformer.toData(object)
         let filePath = makeFilePath(for: key)
@@ -85,18 +85,18 @@ extension DiskStore : StoreAware {
         try manager.setAttributes([.modificationDate : expiry.date], ofItemAtPath: filePath)
     }
     
-    func remove(forKey key: String) throws {
+    public func remove(forKey key: String) throws {
         let filePath = makeFilePath(for: key)
         try manager.removeItem(atPath: filePath)
         onRemove?(filePath)
     }
     
-    func removeAll() throws {
+    public func removeAll() throws {
         try manager.removeItem(atPath: path)
         try createDirectory()
     }
     
-    func removeExpired() throws {
+    public func removeExpired() throws {
         let storageURL = URL(fileURLWithPath: path)
         let resourceKeys: [URLResourceKey] = [
             .contentModificationDateKey,

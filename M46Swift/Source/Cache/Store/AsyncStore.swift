@@ -23,7 +23,7 @@ public class AsyncStore<T>: AsyncStoreAware {
         
     }
 
-    func entry(forKey key: String, _ completion: @escaping (Result<Entry<T>>) -> Void) {
+    public func entry(forKey key: String, _ completion: @escaping (Result<Entry<T>>) -> Void) {
         queue.async { [weak self] in
             guard let self = self else {
                 completion(Result.error(Error.deallocated))
@@ -39,7 +39,7 @@ public class AsyncStore<T>: AsyncStoreAware {
         }
     }
     
-    func add(_ object: T, forKey key: String, expiry: Expiry?, _ completion: @escaping (Result<()>) -> Void) {
+    public func add(_ object: T, forKey key: String, expiry: Expiry?, _ completion: @escaping (Result<()>) -> Void) {
         queue.async { [weak self] in
             guard let self = self else {
                 completion(Result.error(Error.deallocated))
@@ -55,7 +55,7 @@ public class AsyncStore<T>: AsyncStoreAware {
         }
     }
     
-    func remove(forKey key: String, _ completion: @escaping (Result<()>) -> Void) {
+    public func remove(forKey key: String, _ completion: @escaping (Result<()>) -> Void) {
         queue.async { [weak self] in
             guard let self = self else {
                 completion(Result.error(Error.deallocated))
@@ -71,7 +71,7 @@ public class AsyncStore<T>: AsyncStoreAware {
         }
     }
     
-    func removeAll(_ completion: @escaping (Result<()>) -> Void) {
+    public func removeAll(_ completion: @escaping (Result<()>) -> Void) {
         queue.async { [weak self] in
             guard let self = self else {
                 completion(Result.error(Error.deallocated))
@@ -87,7 +87,7 @@ public class AsyncStore<T>: AsyncStoreAware {
         }
     }
     
-    func removeExpired(_ completion: @escaping (Result<()>) -> Void) {
+    public func removeExpired(_ completion: @escaping (Result<()>) -> Void) {
         queue.async { [weak self] in
             guard let self = self else {
                 completion(Result.error(Error.deallocated))

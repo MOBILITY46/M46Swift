@@ -38,7 +38,7 @@ public final class MemoryStore<T> {
 
 extension MemoryStore: StoreAware {
     
-    func entry(forKey key: String) throws -> Entry<T> {
+    public func entry(forKey key: String) throws -> Entry<T> {
         guard let capsule = cache.object(forKey: NSString(string: key)) else {
             throw Error.notFound
         }
@@ -50,7 +50,7 @@ extension MemoryStore: StoreAware {
         return Entry(object: object, expiry: capsule.expiry)
     }
     
-    func add(_ object: T, forKey key: String, expiry: Expiry?) {
+    public func add(_ object: T, forKey key: String, expiry: Expiry?) {
         let capsule = MemoryCapsule(
             object: object,
             expiry: .date(expiry?.date ?? config.expiry.date)
@@ -59,17 +59,17 @@ extension MemoryStore: StoreAware {
         keys.insert(key)
     }
     
-    func remove(forKey key: String) {
+    public func remove(forKey key: String) {
         cache.removeObject(forKey: NSString(string: key))
         keys.remove(key)
     }
     
-    func removeAll() {
+    public func removeAll() {
         cache.removeAllObjects()
         keys.removeAll()
     }
     
-    func removeExpired() {
+    public func removeExpired() {
         keys.forEach { key in
             if let capsule = cache.object(forKey: NSString(string: key)),
                 capsule.expiry.isExpired {

@@ -39,7 +39,7 @@ extension HybridStore {
 }
 
 extension HybridStore: StoreAware {
-    func entry(forKey key: String) throws -> Entry<T> {
+    public func entry(forKey key: String) throws -> Entry<T> {
         do {
             return try memory.entry(forKey: key)
         } catch {
@@ -49,7 +49,7 @@ extension HybridStore: StoreAware {
         }
     }
     
-    func add(_ object: T, forKey key: String, expiry: Expiry?) throws {
+    public func add(_ object: T, forKey key: String, expiry: Expiry?) throws {
         var keyChange: KeyChange<T>?
         
         if keyObservations[key] != nil {
@@ -66,19 +66,19 @@ extension HybridStore: StoreAware {
         notifyValueObservers(about: .add(key: key))
     }
     
-    func remove(forKey key: String) throws {
+    public func remove(forKey key: String) throws {
         memory.remove(forKey: key)
         try disk.remove(forKey: key)
         notifyValueObservers(about: .remove(key: key))
     }
     
-    func removeAll() throws {
+    public func removeAll() throws {
         memory.removeAll()
         try disk.removeAll()
         notifyValueObservers(about: .removeAll)
     }
     
-    func removeExpired() throws {
+    public func removeExpired() throws {
         memory.removeExpired()
         try disk.removeExpired()
         notifyValueObservers(about: .removeExpired)

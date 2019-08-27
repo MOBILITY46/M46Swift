@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol StoreAware {
+public protocol StoreAware {
     associatedtype T
     
     func object(forKey key: String) throws -> T
@@ -30,11 +30,11 @@ protocol StoreAware {
 
 extension StoreAware {
     
-    func object(forKey key: String) throws -> T {
+    public func object(forKey key: String) throws -> T {
         return try entry(forKey: key).object
     }
     
-    func exists(forKey key: String) throws -> Bool {
+    public func exists(forKey key: String) throws -> Bool {
         do {
             let _: T = try object(forKey: key)
             return true
@@ -42,7 +42,7 @@ extension StoreAware {
             return false
         }
     }
-    
+    public   
     func expired(forKey key: String) throws -> Bool {
         do {
             let e = try entry(forKey: key)
@@ -53,7 +53,7 @@ extension StoreAware {
     }
 }
 
-protocol AsyncStoreAware {
+public protocol AsyncStoreAware {
     associatedtype T
 
     func entry(forKey key: String, _ completion: @escaping (_ result: Result<Entry<T>>) -> Void)
@@ -75,18 +75,18 @@ protocol AsyncStoreAware {
 
 extension AsyncStoreAware {
     
-    func object(forKey key: String, _ completion: @escaping (Result<T>) -> Void) {
+    public func object(forKey key: String, _ completion: @escaping (Result<T>) -> Void) {
         entry(forKey: key, { (result: Result<Entry<T>>) in
             completion(result.map { $0.object })
         })
     }
     
-    func exists(forKey key: String, _ completion: @escaping (Result<Bool>) -> Void) {
+    public func exists(forKey key: String, _ completion: @escaping (Result<Bool>) -> Void) {
         object(forKey: key, { (result: Result<T>) in
             completion(result.map { _ in true })
         })
     }
-    
+    public   
     func expired(forKey key: String, _ completion: @escaping (_ result: Result<Bool>) -> Void) {
         entry(forKey: key, { (result: Result<Entry<T>>) in
             completion(result.map { $0.expiry.isExpired })
