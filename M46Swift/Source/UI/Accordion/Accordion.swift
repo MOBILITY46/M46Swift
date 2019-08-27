@@ -9,7 +9,7 @@
 import UIKit
 
 
-
+@available(iOS 9.0, *)
 class Accordion : UIView {
     
     enum State {
