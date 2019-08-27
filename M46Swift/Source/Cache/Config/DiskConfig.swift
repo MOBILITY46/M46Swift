@@ -13,4 +13,11 @@ public struct DiskConfig {
     public let expiry: Expiry
     public let maxSize: UInt
     public let directory: URL?
+    
+    public init(name: String, expiry: Expiry, maxSize: UInt = 30, directory: URL? = nil) {
+        self.name = name
+        self.expiry = expiry
+        self.maxSize = maxSize
+        self.directory = directory
+    }
 }

@@ -40,13 +40,9 @@
 		FE5BF9E2230FF25700C435D3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5BF9E1230FF25700C435D3 /* User.swift */; };
 		FE5BF9E4230FF2E100C435D3 /* Test+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5BF9E3230FF2E100C435D3 /* Test+Extensions.swift */; };
 		FE5BF9E7230FF37D00C435D3 /* ExpiryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5BF9E6230FF37D00C435D3 /* ExpiryTests.swift */; };
-		FE5BF9E8230FF4EF00C435D3 /* Expiry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5BF9C5230ECE9400C435D3 /* Expiry.swift */; };
 		FE5BF9EA23100AC900C435D3 /* MD5Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5BF9E923100AC900C435D3 /* MD5Tests.swift */; };
 		FE5BF9EC23101CC000C435D3 /* DiskStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5BF9EB23101CC000C435D3 /* DiskStoreTests.swift */; };
 		FE5BF9EE23101F6900C435D3 /* MemoryStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5BF9ED23101F6900C435D3 /* MemoryStoreTests.swift */; };
-		FE5BF9F0231026D800C435D3 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5BF9C3230ECE4300C435D3 /* Entry.swift */; };
-		FE5BF9F1231026E000C435D3 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5BF9BD230ECB2300C435D3 /* Result.swift */; };
-		FE5BF9F2231026E500C435D3 /* Serde.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5BF9C1230ECD3D00C435D3 /* Serde.swift */; };
 		FE5BF9F42310426F00C435D3 /* AsyncStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5BF9F32310426F00C435D3 /* AsyncStoreTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -498,18 +494,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE5BF9F0231026D800C435D3 /* Entry.swift in Sources */,
 				FE5BF9E0230FF1F300C435D3 /* TestHelper.swift in Sources */,
 				FE5BF9EC23101CC000C435D3 /* DiskStoreTests.swift in Sources */,
 				FE5BF9EE23101F6900C435D3 /* MemoryStoreTests.swift in Sources */,
-				FE5BF9E8230FF4EF00C435D3 /* Expiry.swift in Sources */,
 				FE5BF9EA23100AC900C435D3 /* MD5Tests.swift in Sources */,
 				FE5BF9E2230FF25700C435D3 /* User.swift in Sources */,
 				FE5BF9E7230FF37D00C435D3 /* ExpiryTests.swift in Sources */,
-				FE5BF9F2231026E500C435D3 /* Serde.swift in Sources */,
 				FE5BF9E4230FF2E100C435D3 /* Test+Extensions.swift in Sources */,
 				FE5BF9F42310426F00C435D3 /* AsyncStoreTests.swift in Sources */,
-				FE5BF9F1231026E000C435D3 /* Result.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
