@@ -9,7 +9,6 @@
 import UIKit
 
 
-@available(iOS 9.0, *)
 class Accordion : UIView {
     
     enum State {
@@ -86,6 +85,7 @@ class Accordion : UIView {
     
 }
 
+@available(iOS 9.0, *)
 extension Accordion {
     
     fileprivate var paneSize: CGSize {
