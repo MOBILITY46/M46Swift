@@ -9,7 +9,7 @@
 import Foundation
 import Dispatch
 
-public final class AsyncStore<T> {
+public class AsyncStore<T>: AsyncStoreAware {
     public enum Error : Swift.Error {
         case deallocated
     }
@@ -22,11 +22,8 @@ public final class AsyncStore<T> {
         self.queue = queue
         
     }
-}
 
-extension AsyncStore {
-    
-    func entry(forKey key: String, completion: @escaping (Result<Entry<T>>) -> Void) {
+    func entry(forKey key: String, _ completion: @escaping (Result<Entry<T>>) -> Void) {
         queue.async { [weak self] in
             guard let self = self else {
                 completion(Result.error(Error.deallocated))
@@ -34,7 +31,7 @@ extension AsyncStore {
             }
             
             do {
-                let entry = try self.store.entry(forKey: key)
+                let entry: Entry<T> = try self.store.entry(forKey: key)
                 completion(Result.value(entry))
             } catch {
                 completion(Result.error(error))
@@ -42,7 +39,7 @@ extension AsyncStore {
         }
     }
     
-    func add(_ object: T, forKey key: String, expiry: Expiry?, completion: @escaping (Result<()>) -> Void) {
+    func add(_ object: T, forKey key: String, expiry: Expiry?, _ completion: @escaping (Result<()>) -> Void) {
         queue.async { [weak self] in
             guard let self = self else {
                 completion(Result.error(Error.deallocated))
@@ -58,7 +55,7 @@ extension AsyncStore {
         }
     }
     
-    func remove(forKey key: String, completion: @escaping (Result<()>) -> Void) {
+    func remove(forKey key: String, _ completion: @escaping (Result<()>) -> Void) {
         queue.async { [weak self] in
             guard let self = self else {
                 completion(Result.error(Error.deallocated))
@@ -74,7 +71,7 @@ extension AsyncStore {
         }
     }
     
-    func removeAll(completion: @escaping (Result<()>) -> Void) {
+    func removeAll(_ completion: @escaping (Result<()>) -> Void) {
         queue.async { [weak self] in
             guard let self = self else {
                 completion(Result.error(Error.deallocated))
@@ -90,7 +87,7 @@ extension AsyncStore {
         }
     }
     
-    func removeExpired(completion: @escaping (Result<()>) -> Void) {
+    func removeExpired(_ completion: @escaping (Result<()>) -> Void) {
         queue.async { [weak self] in
             guard let self = self else {
                 completion(Result.error(Error.deallocated))
@@ -105,19 +102,6 @@ extension AsyncStore {
             }
         }
     }
-    
-    func object(forKey key: String, completion: @escaping (Result<T>) -> Void) {
-        entry(forKey: key, completion: { (result: Result<Entry<T>>) in
-            completion(result.map { $0.object })
-        })
-    }
-    
-    func exists(forKey key: String, completion: @escaping (Result<Bool>) -> Void) {
-        object(forKey: key, completion: { (result: Result<T>) in
-            completion(result.map { _ in true })
-        })
-    }
-    
 }
 
 extension AsyncStore {

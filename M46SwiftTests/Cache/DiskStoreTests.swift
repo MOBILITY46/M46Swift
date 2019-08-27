@@ -22,6 +22,13 @@ class DiskStoreTests: XCTestCase {
             transformer: TransformerFactory.forCodable(ofType: User.self)
         )
     }
+    
+    override func tearDown() {
+        super.tearDown()
+        do {
+            try store.removeAll()
+        } catch {}
+    }
 
     func testAdd() throws {
         try store.add(object, forKey: key, expiry: nil)
