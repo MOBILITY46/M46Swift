@@ -22,9 +22,19 @@ class ExpiryTests: XCTestCase {
     }
     
     func testOneYear() {
-        let date = Date(timeIntervalSince1970: 60 * 60 * 24 * 365)
-        let expiry = Expiry.oneYear
-        XCTAssertEqual(date, expiry.date)
+        let now = Date()
+        let oneYear = Calendar.current.date(byAdding: .year, value: 1, to: now)!
+        let expiry = Expiry.years(1)
+        XCTAssertEqual(oneYear.timeIntervalSinceNow, expiry.date.timeIntervalSinceNow, accuracy: 0.1)
+        XCTAssertFalse(expiry.isExpired)
+    }
+    
+    func testOneMonths() {
+        let now = Date()
+        let oneYear = Calendar.current.date(byAdding: .month, value: 1, to: now)!
+        let expiry = Expiry.months(1)
+        XCTAssertEqual(oneYear.timeIntervalSinceNow, expiry.date.timeIntervalSinceNow, accuracy: 0.1)
+        XCTAssertFalse(expiry.isExpired)
     }
     
     func testDate() {

@@ -12,7 +12,7 @@ import XCTest
 class DiskStoreTests: XCTestCase {
     private let key = "my-store-key"
     private let object = User(firstName: "Sune", lastName: "Surdeg")
-    private let config = DiskConfig(name: "plupp", expiry: .oneYear, maxSize: 2000, directory: nil)
+    private let config = DiskConfig(name: "plupp", expiry: .years(1), maxSize: 2000, directory: nil)
     private let fileManager = FileManager()
     private var store: DiskStore<User>!
 

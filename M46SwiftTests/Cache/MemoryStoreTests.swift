@@ -12,7 +12,7 @@ import XCTest
 class MemoryStoreTests: XCTestCase {
     private let key = "my-store-key"
     private let object = User(firstName: "Sune", lastName: "Surdeg")
-    private let config = MemoryConfig(expiry: .oneYear, countLimit: 10, totalCostLimit: 10)
+    private let config = MemoryConfig(expiry: .years(1), countLimit: 10, totalCostLimit: 10)
     private var store: MemoryStore<User>!
     
     override func setUp() {

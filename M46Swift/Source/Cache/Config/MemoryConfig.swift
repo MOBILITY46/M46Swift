@@ -16,7 +16,7 @@ public struct MemoryConfig {
     public let countLimit: UInt
     public let totalCostLimit: UInt
     
-    public init(expiry: Expiry = .oneYear, countLimit: UInt = 0, totalCostLimit: UInt = 0) {
+    public init(expiry: Expiry = .years(1), countLimit: UInt = 0, totalCostLimit: UInt = 0) {
         self.expiry = expiry
         self.countLimit = countLimit
         self.totalCostLimit = totalCostLimit

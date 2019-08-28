@@ -11,7 +11,8 @@ import Foundation
 public enum Expiry {
     case seconds(TimeInterval)
     case date(Date)
-    case oneYear
+    case years(Int)
+    case months(Int)
     
     public var date: Date {
         switch self {
@@ -21,8 +22,12 @@ public enum Expiry {
         case .date(let dt):
             return dt
             
-        case .oneYear:
-            let future = Date(timeIntervalSince1970: 60 * 60 * 24 * 365)
+        case .months(let months):
+            let future = Calendar.current.date(byAdding: .month, value: months, to: Date())!
+            return future
+            
+        case .years(let years):
+            let future = Calendar.current.date(byAdding: .year, value: years, to: Date())!
             return future
         }
     }

@@ -14,9 +14,9 @@ class AsyncStoreTests: XCTestCase {
     private var cache: AsyncStore<User>!
 
     override func setUp() {
-        let memoryConfig = MemoryConfig(expiry: .oneYear, countLimit: 10, totalCostLimit: 10)
+        let memoryConfig = MemoryConfig(expiry: .years(1), countLimit: 10, totalCostLimit: 10)
         let memory = MemoryStore<User>(config: memoryConfig)
-        let diskConfig = DiskConfig(name: "plupp", expiry: .oneYear, maxSize: 20, directory: nil)
+        let diskConfig = DiskConfig(name: "plupp", expiry: .years(1), maxSize: 20, directory: nil)
         let disk = try! DiskStore<User>(config: diskConfig, transformer: TransformerFactory.forCodable(ofType: User.self))
         
         let hybrid = HybridStore<User>(memory: memory, disk: disk)
