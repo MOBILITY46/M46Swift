@@ -29,7 +29,7 @@ public class Log {
         return components.isEmpty ? "" : components.last!
     }
     
-    static func error( _ object: Any,
+    public static func error( _ object: Any,
                        fileName: String = #file,
                        line: Int = #line,
                        column: Int = #column,
@@ -37,11 +37,11 @@ public class Log {
         print("ERROR: \(Date().toString()) \(LogEvent.e.rawValue) \(sourceFileName(filePath: fileName)) [line: \(line) column: \(column)] \(funcName) -> \(object)")
     }
     
-    static func info( _ object: Any, fileName: String = #file) {
+    public static func info( _ object: Any, fileName: String = #file) {
         print("INFO: \(Date().toString()) \(LogEvent.i.rawValue) \(sourceFileName(filePath: fileName)) \(object)")
     }
     
-    static func debug( _ object: Any = "",
+    public static func debug( _ object: Any = "",
                        filename: String = #file,
                        funcName: String = #function) {
         #if DEBUG
