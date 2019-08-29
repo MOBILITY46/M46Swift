@@ -12,6 +12,7 @@ public final class DiskStore<T> {
     public enum Error: Swift.Error {
         case fileEnumerator
         case malformedFileAttributes
+        case fileStoreError
     }
     
     public let manager: FileManager
@@ -81,7 +82,12 @@ extension DiskStore : StoreAware {
         let expiry = expiry ?? config.expiry
         let data = try transformer.toData(object)
         let filePath = makeFilePath(for: key)
-        manager.createFile(atPath: filePath, contents: data, attributes: nil)
+        let ok = manager.createFile(atPath: filePath, contents: data, attributes: nil)
+        
+        if !ok {
+            throw Error.fileStoreError
+        }
+        
         try manager.setAttributes([.modificationDate : expiry.date], ofItemAtPath: filePath)
     }
     

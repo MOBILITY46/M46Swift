@@ -44,6 +44,7 @@
 		FE5BF9EC23101CC000C435D3 /* DiskStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5BF9EB23101CC000C435D3 /* DiskStoreTests.swift */; };
 		FE5BF9EE23101F6900C435D3 /* MemoryStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5BF9ED23101F6900C435D3 /* MemoryStoreTests.swift */; };
 		FE5BF9F42310426F00C435D3 /* AsyncStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5BF9F32310426F00C435D3 /* AsyncStoreTests.swift */; };
+		FE5BFA042317D5B400C435D3 /* HybridStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5BFA032317D5B400C435D3 /* HybridStoreTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		FE5BF9EB23101CC000C435D3 /* DiskStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskStoreTests.swift; sourceTree = "<group>"; };
 		FE5BF9ED23101F6900C435D3 /* MemoryStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryStoreTests.swift; sourceTree = "<group>"; };
 		FE5BF9F32310426F00C435D3 /* AsyncStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncStoreTests.swift; sourceTree = "<group>"; };
+		FE5BFA032317D5B400C435D3 /* HybridStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HybridStoreTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -303,6 +305,7 @@
 				FE5BF9EB23101CC000C435D3 /* DiskStoreTests.swift */,
 				FE5BF9ED23101F6900C435D3 /* MemoryStoreTests.swift */,
 				FE5BF9F32310426F00C435D3 /* AsyncStoreTests.swift */,
+				FE5BFA032317D5B400C435D3 /* HybridStoreTests.swift */,
 			);
 			path = Cache;
 			sourceTree = "<group>";
@@ -499,6 +502,7 @@
 				FE5BF9EE23101F6900C435D3 /* MemoryStoreTests.swift in Sources */,
 				FE5BF9EA23100AC900C435D3 /* MD5Tests.swift in Sources */,
 				FE5BF9E2230FF25700C435D3 /* User.swift in Sources */,
+				FE5BFA042317D5B400C435D3 /* HybridStoreTests.swift in Sources */,
 				FE5BF9E7230FF37D00C435D3 /* ExpiryTests.swift in Sources */,
 				FE5BF9E4230FF2E100C435D3 /* Test+Extensions.swift in Sources */,
 				FE5BF9F42310426F00C435D3 /* AsyncStoreTests.swift in Sources */,

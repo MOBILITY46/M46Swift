@@ -31,17 +31,34 @@ class AsyncStoreTests: XCTestCase {
     }
 
     func testAdd() {
-        let expectation = self.expectation(description: #function)
+        let expectationOne = XCTestExpectation(description: #function)
+        let expectationTwo = XCTestExpectation(description: #function)
+        
         cache.add(object, forKey: "user", expiry: nil, { res in
             switch res {
                 case .value(_):
-                    expectation.fulfill()
+                    expectationOne.fulfill()
                     return
                 case .error(let err):
                     XCTFail(err.localizedDescription)
             }
         })
         
-        wait(for: [expectation], timeout: 1)
+        cache.entry(forKey: "user", { res in
+            switch res {
+            case .value(let entry):
+                if entry.expiry.isExpired == false {
+                    print("Entry: \(entry)")
+                    expectationTwo.fulfill()
+                    return
+                }
+            case .error(let err):
+                XCTFail(err.localizedDescription)
+            }
+        })
+        
+        
+        
+        wait(for: [expectationOne, expectationTwo], timeout: 1)
     }
 }
