@@ -31,7 +31,7 @@ public class AsyncStore<T>: AsyncStoreAware {
             }
             
             do {
-                let entry: Entry<T> = try self.store.entry(forKey: key)
+                let entry = try self.store.entry(forKey: key)
                 completion(Result.value(entry))
             } catch {
                 completion(Result.error(error))

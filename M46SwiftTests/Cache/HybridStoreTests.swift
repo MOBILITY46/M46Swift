@@ -30,7 +30,10 @@ class HybridStoreTests: XCTestCase {
     }
 
     override func tearDown() {
-        try? store.removeAll()
+        super.tearDown()
+        do {
+        try store.removeAll()
+        } catch {}
     }
     
     func testAdd() throws {

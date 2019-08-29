@@ -17,12 +17,4 @@ struct User: Codable, Equatable {
         case firstName = "firstName"
         case lastName = "lastName"
     }
-    
-    static func == (lhs:User, rhs: User) -> Bool {
-        return lhs.firstName == rhs.firstName
-            && lhs.lastName == rhs.lastName
-    }
 }
-
-
-

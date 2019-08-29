@@ -60,7 +60,7 @@ public final class DiskStore<T> {
     }
 }
 
-typealias ResourceObject = (url: Foundation.URL, resourceValues: URLResourceValues)
+typealias ResourceObject = (url: URL, resourceValues: URLResourceValues)
 
 extension DiskStore : StoreAware {
 
@@ -89,12 +89,14 @@ extension DiskStore : StoreAware {
         }
         
         try manager.setAttributes([.modificationDate : expiry.date], ofItemAtPath: filePath)
+        Log.info("cached: \(filePath)")
     }
     
     public func remove(forKey key: String) throws {
         let filePath = makeFilePath(for: key)
         try manager.removeItem(atPath: filePath)
         onRemove?(filePath)
+        Log.info("removed: \(filePath)")
     }
     
     public func removeAll() throws {
@@ -144,6 +146,7 @@ extension DiskStore : StoreAware {
         
         for url in filesToDelete {
             try manager.removeItem(at: url)
+            Log.info("removed: \(url)")
             onRemove?(url.path)
         }
         

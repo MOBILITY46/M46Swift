@@ -45,6 +45,7 @@
 		FE5BF9EE23101F6900C435D3 /* MemoryStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5BF9ED23101F6900C435D3 /* MemoryStoreTests.swift */; };
 		FE5BF9F42310426F00C435D3 /* AsyncStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5BF9F32310426F00C435D3 /* AsyncStoreTests.swift */; };
 		FE5BFA042317D5B400C435D3 /* HybridStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5BFA032317D5B400C435D3 /* HybridStoreTests.swift */; };
+		FE5BFA092318226A00C435D3 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5BFA082318226A00C435D3 /* Log.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		FE5BF9ED23101F6900C435D3 /* MemoryStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryStoreTests.swift; sourceTree = "<group>"; };
 		FE5BF9F32310426F00C435D3 /* AsyncStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncStoreTests.swift; sourceTree = "<group>"; };
 		FE5BFA032317D5B400C435D3 /* HybridStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HybridStoreTests.swift; sourceTree = "<group>"; };
+		FE5BFA082318226A00C435D3 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,6 +287,7 @@
 				FE5BF9C5230ECE9400C435D3 /* Expiry.swift */,
 				FE5BF9D2230EE13300C435D3 /* Transformer.swift */,
 				FE5BF9D6230EECB100C435D3 /* MD5.swift */,
+				FE5BFA082318226A00C435D3 /* Log.swift */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -301,7 +304,7 @@
 		FE5BF9DE230FF1E200C435D3 /* Cache */ = {
 			isa = PBXGroup;
 			children = (
-				FE5BF9E1230FF25700C435D3 /* User.swift */,
+				FE5BFA0523181F2400C435D3 /* Model */,
 				FE5BF9EB23101CC000C435D3 /* DiskStoreTests.swift */,
 				FE5BF9ED23101F6900C435D3 /* MemoryStoreTests.swift */,
 				FE5BF9F32310426F00C435D3 /* AsyncStoreTests.swift */,
@@ -317,6 +320,14 @@
 				FE5BF9E923100AC900C435D3 /* MD5Tests.swift */,
 			);
 			path = Lib;
+			sourceTree = "<group>";
+		};
+		FE5BFA0523181F2400C435D3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FE5BF9E1230FF25700C435D3 /* User.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -471,6 +482,7 @@
 				FE5BF9DB230FE37200C435D3 /* StoreObserver.swift in Sources */,
 				FE5BF9BE230ECB2300C435D3 /* Result.swift in Sources */,
 				FE5BF9D1230EE08B00C435D3 /* MemoryStore.swift in Sources */,
+				FE5BFA092318226A00C435D3 /* Log.swift in Sources */,
 				FE5BF987230EC81500C435D3 /* SliderLayout.swift in Sources */,
 				FE5BF9CF230EE06800C435D3 /* DiskStore.swift in Sources */,
 				FE5BF9CD230EDEE200C435D3 /* AsyncStore.swift in Sources */,

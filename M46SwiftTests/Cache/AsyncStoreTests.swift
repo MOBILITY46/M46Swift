@@ -25,9 +25,7 @@ class AsyncStoreTests: XCTestCase {
     
     override func tearDown() {
         super.tearDown()
-        cache.removeAll { result in
-            print("cache cleared")
-        }
+        cache.removeAll { _ in }
     }
 
     func testAdd() {
