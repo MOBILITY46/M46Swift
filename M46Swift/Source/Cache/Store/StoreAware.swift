@@ -86,8 +86,8 @@ extension AsyncStoreAware {
             completion(result.map { _ in true })
         })
     }
-    public   
-    func expired(forKey key: String, _ completion: @escaping (_ result: Result<Bool>) -> Void) {
+    
+    public func expired(forKey key: String, _ completion: @escaping (_ result: Result<Bool>) -> Void) {
         entry(forKey: key, { (result: Result<Entry<T>>) in
             completion(result.map { $0.expiry.isExpired })
         })

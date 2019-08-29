@@ -46,5 +46,11 @@ class DiskStoreTests: XCTestCase {
         fileExists = fileManager.fileExists(atPath: store.makeFilePath(for: key))
         XCTAssertFalse(fileExists)
     }
+    
+    func testStoredEntryHasFilePath() throws {
+        try store.add(object, forKey: key, expiry: nil)
+        let entry = try store.entry(forKey: key)
+        XCTAssertNotNil(entry.filePath)
+    }
 
 }

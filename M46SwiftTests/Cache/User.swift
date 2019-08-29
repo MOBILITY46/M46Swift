@@ -12,7 +12,7 @@ import Foundation
 struct User: Codable, Equatable {
     let firstName: String
     let lastName: String
-    
+
     enum CodingKeys: String, CodingKey {
         case firstName = "firstName"
         case lastName = "lastName"

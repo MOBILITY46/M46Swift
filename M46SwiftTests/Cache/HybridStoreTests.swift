@@ -12,7 +12,7 @@ import XCTest
 class HybridStoreTests: XCTestCase {
     private let cacheName = "Hybrid"
     private let key = "user"
-    private let user = User(firstName: "Niclas", lastName: "Rosengren")
+    private let user = User(firstName: "Sune", lastName: "Surdeg")
     private var store: HybridStore<User>!
     private let fileManager = FileManager()
     
@@ -33,6 +33,10 @@ class HybridStoreTests: XCTestCase {
         try? store.removeAll()
     }
     
-    func testAdd() {
+    func testAdd() throws {
+        try store.add(user, forKey: key, expiry: nil)
+        XCTAssertNotNil(try store.object(forKey: key), "user could not be found")
     }
+    
+
 }

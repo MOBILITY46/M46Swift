@@ -31,7 +31,7 @@ public final class DiskStore<T> {
         } else {
             url = try manager.url(
                 for: .cachesDirectory,
-                in: .userDomainMask,
+                in: .localDomainMask,
                 appropriateFor: nil,
                 create: true
             )
