@@ -14,7 +14,7 @@ enum LogEvent: String {
     case i = "💬"
 }
 
-class Log {
+public class Log {
     
     static var df: DateFormatter {
         let formatter = DateFormatter()
