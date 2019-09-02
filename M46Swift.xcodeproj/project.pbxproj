@@ -46,6 +46,8 @@
 		FE5BF9F42310426F00C435D3 /* AsyncStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5BF9F32310426F00C435D3 /* AsyncStoreTests.swift */; };
 		FE5BFA042317D5B400C435D3 /* HybridStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5BFA032317D5B400C435D3 /* HybridStoreTests.swift */; };
 		FE5BFA092318226A00C435D3 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5BFA082318226A00C435D3 /* Log.swift */; };
+		FEC043F6231D474D006CB554 /* AccordionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC043F5231D474D006CB554 /* AccordionCell.swift */; };
+		FEC043F8231D477A006CB554 /* AccordionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC043F7231D477A006CB554 /* AccordionController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +103,8 @@
 		FE5BF9F32310426F00C435D3 /* AsyncStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncStoreTests.swift; sourceTree = "<group>"; };
 		FE5BFA032317D5B400C435D3 /* HybridStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HybridStoreTests.swift; sourceTree = "<group>"; };
 		FE5BFA082318226A00C435D3 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		FEC043F5231D474D006CB554 /* AccordionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionCell.swift; sourceTree = "<group>"; };
+		FEC043F7231D477A006CB554 /* AccordionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +244,8 @@
 			isa = PBXGroup;
 			children = (
 				FE5BF984230EC81500C435D3 /* Accordion.swift */,
+				FEC043F5231D474D006CB554 /* AccordionCell.swift */,
+				FEC043F7231D477A006CB554 /* AccordionController.swift */,
 			);
 			path = Accordion;
 			sourceTree = "<group>";
@@ -478,6 +484,7 @@
 				FE5BF985230EC81500C435D3 /* SliderCell.swift in Sources */,
 				FE5BF9D5230EE55100C435D3 /* StoreAware.swift in Sources */,
 				FE5BF988230EC81500C435D3 /* Accordion.swift in Sources */,
+				FEC043F6231D474D006CB554 /* AccordionCell.swift in Sources */,
 				FE5BF9D7230EECB100C435D3 /* MD5.swift in Sources */,
 				FE5BF9DB230FE37200C435D3 /* StoreObserver.swift in Sources */,
 				FE5BF9BE230ECB2300C435D3 /* Result.swift in Sources */,
@@ -491,6 +498,7 @@
 				FE5BF9CB230ED4C700C435D3 /* MemoryConfig.swift in Sources */,
 				FE5BF9C6230ECE9400C435D3 /* Expiry.swift in Sources */,
 				FE03ABFB224CC21900D4D84B /* Card.swift in Sources */,
+				FEC043F8231D477A006CB554 /* AccordionController.swift in Sources */,
 				FE5BF9D9230F0C2E00C435D3 /* Store+Transform.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
