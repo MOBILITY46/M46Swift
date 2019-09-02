@@ -89,7 +89,7 @@ extension Accordion {
     
     fileprivate var paneSize: CGSize {
         guard let superview = superview else { return .zero }
-        return CGSize(width: superview.frame.width, height: 50)
+        return CGSize(width: superview.frame.width, height: 70)
     }
     
     fileprivate var contentSize: CGSize {
