@@ -46,6 +46,8 @@
 		FE5BF9F42310426F00C435D3 /* AsyncStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5BF9F32310426F00C435D3 /* AsyncStoreTests.swift */; };
 		FE5BFA042317D5B400C435D3 /* HybridStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5BFA032317D5B400C435D3 /* HybridStoreTests.swift */; };
 		FE5BFA092318226A00C435D3 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5BFA082318226A00C435D3 /* Log.swift */; };
+		FEABC54F233227FC009AF03A /* Sheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEABC54E233227FC009AF03A /* Sheet.swift */; };
+		FEABC551233228CD009AF03A /* SheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEABC550233228CD009AF03A /* SheetViewController.swift */; };
 		FEC043F6231D474D006CB554 /* AccordionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC043F5231D474D006CB554 /* AccordionCell.swift */; };
 		FEC043F8231D477A006CB554 /* AccordionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC043F7231D477A006CB554 /* AccordionController.swift */; };
 /* End PBXBuildFile section */
@@ -103,6 +105,8 @@
 		FE5BF9F32310426F00C435D3 /* AsyncStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncStoreTests.swift; sourceTree = "<group>"; };
 		FE5BFA032317D5B400C435D3 /* HybridStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HybridStoreTests.swift; sourceTree = "<group>"; };
 		FE5BFA082318226A00C435D3 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		FEABC54E233227FC009AF03A /* Sheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sheet.swift; sourceTree = "<group>"; };
+		FEABC550233228CD009AF03A /* SheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetViewController.swift; sourceTree = "<group>"; };
 		FEC043F5231D474D006CB554 /* AccordionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionCell.swift; sourceTree = "<group>"; };
 		FEC043F7231D477A006CB554 /* AccordionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -204,6 +208,7 @@
 		FE5BF980230EC6DB00C435D3 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				FEABC54D233227E3009AF03A /* Sheet */,
 				FE5BF993230EC8D600C435D3 /* Card */,
 				FE5BF992230EC8CC00C435D3 /* Accordion */,
 				FE5BF991230EC8C300C435D3 /* Slider */,
@@ -334,6 +339,15 @@
 				FE5BF9E1230FF25700C435D3 /* User.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		FEABC54D233227E3009AF03A /* Sheet */ = {
+			isa = PBXGroup;
+			children = (
+				FEABC54E233227FC009AF03A /* Sheet.swift */,
+				FEABC550233228CD009AF03A /* SheetViewController.swift */,
+			);
+			path = Sheet;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -478,6 +492,7 @@
 				FE5BF9DD230FF02500C435D3 /* HybridStore.swift in Sources */,
 				FE5BF9C4230ECE4300C435D3 /* Entry.swift in Sources */,
 				FE5BF9D3230EE13300C435D3 /* Transformer.swift in Sources */,
+				FEABC551233228CD009AF03A /* SheetViewController.swift in Sources */,
 				FE5BF98E230EC8AB00C435D3 /* Toast.swift in Sources */,
 				FE5BF986230EC81500C435D3 /* SliderView.swift in Sources */,
 				FE5BF98C230EC8AB00C435D3 /* Modal.swift in Sources */,
@@ -495,6 +510,7 @@
 				FE5BF9CD230EDEE200C435D3 /* AsyncStore.swift in Sources */,
 				FE5BF9C2230ECD3D00C435D3 /* Serde.swift in Sources */,
 				FE5BF9C9230ED4B700C435D3 /* DiskConfig.swift in Sources */,
+				FEABC54F233227FC009AF03A /* Sheet.swift in Sources */,
 				FE5BF9CB230ED4C700C435D3 /* MemoryConfig.swift in Sources */,
 				FE5BF9C6230ECE9400C435D3 /* Expiry.swift in Sources */,
 				FE03ABFB224CC21900D4D84B /* Card.swift in Sources */,
