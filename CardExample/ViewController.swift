@@ -10,13 +10,13 @@ import UIKit
 import M46Swift
 
 class ViewController: UIViewController {
-    
+
     lazy var front: UIView = {
         let v = UIView()
         v.backgroundColor = .blue
         return v
     }()
-    
+
     lazy var back: UIView = {
         let v = UIView()
         v.backgroundColor = .red
