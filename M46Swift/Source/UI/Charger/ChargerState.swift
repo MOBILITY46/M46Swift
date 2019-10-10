@@ -8,9 +8,9 @@
 
 import UIKit
 
-public class ChargerState {
+public class ChargerOutlet {
     
-    public enum ChargerState: String {
+    public enum State: String {
         case available = "Available"
         case preparing = "Preparing"
         case charging = "Charging"
@@ -33,31 +33,27 @@ public class ChargerState {
         }
     }
     
-    var state: ChargerState {
+    var state: State {
         sm.state
     }
+
+    private let sm: StateMachine<State>
     
-    var ready: Bool {
-        sm.state == .preparing
-    }
-    
-    private let sm: StateMachine<ChargerState>
-    
-    public init (_ sm: StateMachine<ChargerState> = StateMachine(state: .unknown)) {
+    public init (_ sm: StateMachine<State> = StateMachine(state: .unknown)) {
         self.sm = sm
         self.imageView = UIImageView(image: UIImage(named: "ev-socket"))
         sm.stateChanged(update)
     }
     
     func set(_ value: String) {
-        if let state = ChargerState(rawValue: value) {
+        if let state = State(rawValue: value) {
             sm.state = state
         } else {
             sm.state = .unknown
         }
     }
     
-    func set(_ value: ChargerState) {
+    func set(_ value: State) {
         sm.state = value
     }
     
@@ -70,7 +66,7 @@ public class ChargerState {
             }, completion: completion)
     }
     
-    private func update(_ sm: StateMachine<ChargerState>) {
+    private func update(_ sm: StateMachine<State>) {
         switch sm.state {
         case .available:
             self.animate(to: UIImage(named: "ev-socket"), nil)
@@ -114,6 +110,5 @@ public class ChargerState {
             transitionDuration = 0.55
             self.animate(to: UIImage(named: "ev-socket"), nil)
         }
-        
     }
 }
