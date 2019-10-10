@@ -10,7 +10,7 @@ import UIKit
 
 public class ChargerState {
     
-    enum ChargerState: String {
+    public enum ChargerState: String {
         case available = "Available"
         case preparing = "Preparing"
         case charging = "Charging"
@@ -43,7 +43,7 @@ public class ChargerState {
     
     private let sm: StateMachine<ChargerState>
     
-    init (_ sm: StateMachine<ChargerState> = StateMachine(state: .unknown)) {
+    public init (_ sm: StateMachine<ChargerState> = StateMachine(state: .unknown)) {
         self.sm = sm
         self.imageView = UIImageView(image: UIImage(named: "ev-socket"))
         sm.stateChanged(update)

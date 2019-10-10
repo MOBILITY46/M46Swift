@@ -58,7 +58,7 @@ public class ChargeSwitch: UIControl {
         setupUI()
     }
     
-    public required init?(coder: NSCoder) {
+    required init?(coder: NSCoder) {
         super.init(coder: coder)
         setupUI()
     }

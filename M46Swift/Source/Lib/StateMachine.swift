@@ -28,11 +28,11 @@ public class StateMachine<T> : StateMachineState {
         }
     }
     
-    init(state: T) {
+    public init(state: T) {
         self.state = state
     }
     
-    func stateChanged(_ callback: @escaping (_ sm: StateMachine<T>) -> Void) {
+    public func stateChanged(_ callback: @escaping (_ sm: StateMachine<T>) -> Void) {
         self.callback = callback
     }
     
