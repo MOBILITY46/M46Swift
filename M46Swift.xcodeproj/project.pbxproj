@@ -12,14 +12,15 @@
 		FE03ABED224CC17500D4D84B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE03ABEC224CC17500D4D84B /* ViewController.swift */; };
 		FE03ABFB224CC21900D4D84B /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE03ABFA224CC21900D4D84B /* Card.swift */; };
 		FE03ABFD224CC34800D4D84B /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE03ABFA224CC21900D4D84B /* Card.swift */; };
+		FE08685E234F31D300E7E85D /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE08685D234F31D300E7E85D /* Result.swift */; };
 		FE23EEB5234B635100652575 /* StateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE57CAF3234B61AA0031BCD9 /* StateMachine.swift */; };
 		FE23EEB6234B8F8A00652575 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEDD1CA3234B31C800C3E40A /* Assets.xcassets */; };
 		FE23EEB8234BA55B00652575 /* ChargeSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE23EEB7234BA55B00652575 /* ChargeSwitch.swift */; };
 		FE23EEBA234BA5D500652575 /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE23EEB9234BA5D500652575 /* Localized.swift */; };
 		FE23EEBB234C74B800652575 /* M46Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE03ABD8224CC0C000D4D84B /* M46Swift.framework */; };
 		FE23EEC0234C74D200652575 /* ChargeSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE23EEB7234BA55B00652575 /* ChargeSwitch.swift */; };
-		FE57CAE9234B356D0031BCD9 /* ChargerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE57CAE8234B356D0031BCD9 /* ChargerState.swift */; };
-		FE57CAEC234B607A0031BCD9 /* ChargerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE57CAE8234B356D0031BCD9 /* ChargerState.swift */; };
+		FE57CAE9234B356D0031BCD9 /* ChargerOutlet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE57CAE8234B356D0031BCD9 /* ChargerOutlet.swift */; };
+		FE57CAEC234B607A0031BCD9 /* ChargerOutlet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE57CAE8234B356D0031BCD9 /* ChargerOutlet.swift */; };
 		FE57CAF4234B61AA0031BCD9 /* StateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE57CAF3234B61AA0031BCD9 /* StateMachine.swift */; };
 		FE5BF97D230EC5EF00C435D3 /* M46Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE03ABD8224CC0C000D4D84B /* M46Swift.framework */; };
 		FE5BF985230EC81500C435D3 /* SliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5BF981230EC81500C435D3 /* SliderCell.swift */; };
@@ -30,7 +31,6 @@
 		FE5BF98D230EC8AB00C435D3 /* Dialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5BF98A230EC8AB00C435D3 /* Dialog.swift */; };
 		FE5BF98E230EC8AB00C435D3 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5BF98B230EC8AB00C435D3 /* Toast.swift */; };
 		FE5BF9B3230ECA3C00C435D3 /* M46Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE03ABD8224CC0C000D4D84B /* M46Swift.framework */; };
-		FE5BF9BE230ECB2300C435D3 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5BF9BD230ECB2300C435D3 /* Result.swift */; };
 		FE5BF9C2230ECD3D00C435D3 /* Serde.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5BF9C1230ECD3D00C435D3 /* Serde.swift */; };
 		FE5BF9C4230ECE4300C435D3 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5BF9C3230ECE4300C435D3 /* Entry.swift */; };
 		FE5BF9C6230ECE9400C435D3 /* Expiry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5BF9C5230ECE9400C435D3 /* Expiry.swift */; };
@@ -90,9 +90,10 @@
 		FE03ABEC224CC17500D4D84B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FE03ABF6224CC17600D4D84B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE03ABFA224CC21900D4D84B /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		FE08685D234F31D300E7E85D /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		FE23EEB7234BA55B00652575 /* ChargeSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeSwitch.swift; sourceTree = "<group>"; };
 		FE23EEB9234BA5D500652575 /* Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localized.swift; sourceTree = "<group>"; };
-		FE57CAE8234B356D0031BCD9 /* ChargerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargerState.swift; sourceTree = "<group>"; };
+		FE57CAE8234B356D0031BCD9 /* ChargerOutlet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargerOutlet.swift; sourceTree = "<group>"; };
 		FE57CAF3234B61AA0031BCD9 /* StateMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateMachine.swift; sourceTree = "<group>"; };
 		FE5BF981230EC81500C435D3 /* SliderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderCell.swift; sourceTree = "<group>"; };
 		FE5BF982230EC81500C435D3 /* SliderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
@@ -103,7 +104,6 @@
 		FE5BF98B230EC8AB00C435D3 /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		FE5BF9AE230ECA3C00C435D3 /* M46SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = M46SwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE5BF9B2230ECA3C00C435D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FE5BF9BD230ECB2300C435D3 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		FE5BF9C1230ECD3D00C435D3 /* Serde.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Serde.swift; sourceTree = "<group>"; };
 		FE5BF9C3230ECE4300C435D3 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		FE5BF9C5230ECE9400C435D3 /* Expiry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expiry.swift; sourceTree = "<group>"; };
@@ -332,7 +332,6 @@
 		FE5BF9BC230ECB0800C435D3 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
-				FE5BF9BD230ECB2300C435D3 /* Result.swift */,
 				FE5BF9C1230ECD3D00C435D3 /* Serde.swift */,
 				FE5BF9C3230ECE4300C435D3 /* Entry.swift */,
 				FE5BF9C5230ECE9400C435D3 /* Expiry.swift */,
@@ -341,6 +340,7 @@
 				FE5BFA082318226A00C435D3 /* Log.swift */,
 				FE57CAF3234B61AA0031BCD9 /* StateMachine.swift */,
 				FE23EEB9234BA5D500652575 /* Localized.swift */,
+				FE08685D234F31D300E7E85D /* Result.swift */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -395,7 +395,7 @@
 		FEDD1CA2234B318500C3E40A /* Charger */ = {
 			isa = PBXGroup;
 			children = (
-				FE57CAE8234B356D0031BCD9 /* ChargerState.swift */,
+				FE57CAE8234B356D0031BCD9 /* ChargerOutlet.swift */,
 				FE23EEB7234BA55B00652575 /* ChargeSwitch.swift */,
 			);
 			path = Charger;
@@ -586,7 +586,8 @@
 				FE5BF9C4230ECE4300C435D3 /* Entry.swift in Sources */,
 				FE5BF9D3230EE13300C435D3 /* Transformer.swift in Sources */,
 				FEABC551233228CD009AF03A /* SheetViewController.swift in Sources */,
-				FE57CAE9234B356D0031BCD9 /* ChargerState.swift in Sources */,
+				FE08685E234F31D300E7E85D /* Result.swift in Sources */,
+				FE57CAE9234B356D0031BCD9 /* ChargerOutlet.swift in Sources */,
 				FE5BF98E230EC8AB00C435D3 /* Toast.swift in Sources */,
 				FE5BF986230EC81500C435D3 /* SliderView.swift in Sources */,
 				FE5BF98C230EC8AB00C435D3 /* Modal.swift in Sources */,
@@ -596,7 +597,6 @@
 				FEC043F6231D474D006CB554 /* AccordionCell.swift in Sources */,
 				FE5BF9D7230EECB100C435D3 /* MD5.swift in Sources */,
 				FE5BF9DB230FE37200C435D3 /* StoreObserver.swift in Sources */,
-				FE5BF9BE230ECB2300C435D3 /* Result.swift in Sources */,
 				FE5BF9D1230EE08B00C435D3 /* MemoryStore.swift in Sources */,
 				FE5BFA092318226A00C435D3 /* Log.swift in Sources */,
 				FE23EEB8234BA55B00652575 /* ChargeSwitch.swift in Sources */,
@@ -648,7 +648,7 @@
 				FE23EEC0234C74D200652575 /* ChargeSwitch.swift in Sources */,
 				FEDD1CB0234B321A00C3E40A /* ViewController.swift in Sources */,
 				FEDD1CAC234B321A00C3E40A /* AppDelegate.swift in Sources */,
-				FE57CAEC234B607A0031BCD9 /* ChargerState.swift in Sources */,
+				FE57CAEC234B607A0031BCD9 /* ChargerOutlet.swift in Sources */,
 				FE23EEB5234B635100652575 /* StateMachine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

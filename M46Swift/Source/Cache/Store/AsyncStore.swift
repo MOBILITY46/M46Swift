@@ -26,15 +26,15 @@ public class AsyncStore<T>: AsyncStoreAware {
     public func entry(forKey key: String, _ completion: @escaping (Result<Entry<T>>) -> Void) {
         queue.async { [weak self] in
             guard let self = self else {
-                completion(Result.error(Error.deallocated))
+                completion(Result.err(Error.deallocated))
                 return
             }
             
             do {
                 let entry = try self.store.entry(forKey: key)
-                completion(Result.value(entry))
+                completion(Result.ok(entry))
             } catch {
-                completion(Result.error(error))
+                completion(Result.err(error))
             }
         }
     }
@@ -42,15 +42,15 @@ public class AsyncStore<T>: AsyncStoreAware {
     public func add(_ object: T, forKey key: String, expiry: Expiry?, _ completion: @escaping (Result<()>) -> Void) {
         queue.async { [weak self] in
             guard let self = self else {
-                completion(Result.error(Error.deallocated))
+                completion(Result.err(Error.deallocated))
                 return
             }
             
             do {
                 try self.store.add(object, forKey: key, expiry: expiry)
-                completion(Result.value(()))
+                completion(Result.ok(()))
             } catch {
-                completion(Result.error(error))
+                completion(Result.err(error))
             }
         }
     }
@@ -58,15 +58,15 @@ public class AsyncStore<T>: AsyncStoreAware {
     public func remove(forKey key: String, _ completion: @escaping (Result<()>) -> Void) {
         queue.async { [weak self] in
             guard let self = self else {
-                completion(Result.error(Error.deallocated))
+                completion(Result.err(Error.deallocated))
                 return
             }
             
             do {
                 try self.store.remove(forKey: key)
-                completion(Result.value(()))
+                completion(Result.ok(()))
             } catch {
-                completion(Result.error(error))
+                completion(Result.err(error))
             }
         }
     }
@@ -74,15 +74,15 @@ public class AsyncStore<T>: AsyncStoreAware {
     public func removeAll(_ completion: @escaping (Result<()>) -> Void) {
         queue.async { [weak self] in
             guard let self = self else {
-                completion(Result.error(Error.deallocated))
+                completion(Result.err(Error.deallocated))
                 return
             }
             
             do {
                 try self.store.removeAll()
-                completion(Result.value(()))
+                completion(Result.ok(()))
             } catch {
-                completion(Result.error(error))
+                completion(Result.err(error))
             }
         }
     }
@@ -90,15 +90,15 @@ public class AsyncStore<T>: AsyncStoreAware {
     public func removeExpired(_ completion: @escaping (Result<()>) -> Void) {
         queue.async { [weak self] in
             guard let self = self else {
-                completion(Result.error(Error.deallocated))
+                completion(Result.err(Error.deallocated))
                 return
             }
             
             do {
                 try self.store.removeExpired()
-                completion(Result.value(()))
+                completion(Result.ok(()))
             } catch {
-                completion(Result.error(error))
+                completion(Result.err(error))
             }
         }
     }

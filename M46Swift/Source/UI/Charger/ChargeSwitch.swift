@@ -34,6 +34,14 @@ public class ChargeSwitch: UIControl {
             thumbView.backgroundColor = thumbTintColor
         }
     }
+    
+    public var disabled: Bool = false {
+        didSet {
+            thumbView.backgroundColor = thumbTintColor
+                .withAlphaComponent(disabled ? 0.7 : 1.0)
+            isEnabled = !disabled
+        }
+    }
 
     var cornerRadius: CGFloat = 0.5 {
         didSet {

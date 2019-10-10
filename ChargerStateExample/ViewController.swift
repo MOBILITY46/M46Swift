@@ -36,31 +36,31 @@ class ViewController: UIViewController {
     @objc
     func toggle() {
         if chargeSwitch.on {
-            outlet.set("Charging")
+            outlet.state = .preparing
         } else {
-            outlet.set("Preparing")
+            outlet.state = .available
         }
     }
     
     @objc
     func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
+        /*
         switch outlet.state {
         case .available:
-            outlet.set("Preparing")
+            outlet.state = .preparing
             chargeSwitch.toggle(on: false)
         case .preparing:
-            outlet.set("Charging")
+            outlet.state = .charging
             chargeSwitch.toggle(on: true)
         case .charging:
-            outlet.set("Preparing")
-            chargeSwitch.toggle(on: false)
-        case .suspendedEV:
-            outlet.set("Faulted")
+            outlet.state = .preparing
             chargeSwitch.toggle(on: false)
         default:
-            outlet.set("Available")
+            outlet.state = .available
             chargeSwitch.toggle(on: false)
         }
+        */
+        chargeSwitch.disabled = !chargeSwitch.disabled
     }
 
 

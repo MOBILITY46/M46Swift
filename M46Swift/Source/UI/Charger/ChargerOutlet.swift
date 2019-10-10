@@ -6,21 +6,26 @@
 //  Copyright © 2019 se.mobility46. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
 public class ChargerOutlet {
     
     public enum State: String {
-        case available = "Available"
-        case preparing = "Preparing"
-        case charging = "Charging"
-        case suspendedEVSE = "SuspendedEVSE"
-        case suspendedEV = "SuspendedEV"
-        case finishing = "Finishing"
-        case reserved = "Reserved"
-        case unavailable = "Unavailable"
-        case faulted = "Faulted"
+        case available = "available"
+        case preparing = "preparing"
+        case charging = "charging"
+        case suspendedEVSE = "suspendedevse"
+        case suspendedEV = "suspendedev"
+        case finishing = "finishing"
+        case reserved = "reserved"
+        case unavailable = "unavailable"
+        case faulted = "faulted"
         case unknown
+    }
+    
+    public enum Error: Swift.Error {
+        case typeError(String)
     }
     
     private var transitionDuration: Double = 0.21
@@ -33,30 +38,26 @@ public class ChargerOutlet {
         }
     }
     
-    var state: State {
-        sm.state
-    }
-
     private let sm: StateMachine<State>
     
-    public init (_ sm: StateMachine<State> = StateMachine(state: .unknown)) {
-        self.sm = sm
-        self.imageView = UIImageView(image: UIImage(named: "ev-socket"))
-        sm.stateChanged(update)
-    }
-    
-    func set(_ value: String) {
-        if let state = State(rawValue: value) {
+    public var state: State = .unknown {
+        didSet {
             sm.state = state
-        } else {
-            sm.state = .unknown
         }
     }
     
-    func set(_ value: State) {
-        sm.state = value
-    }
+    public var onUpdate: ((_ state: State) -> Void)?
     
+    public init (state: String = "unknown") {
+        self.imageView = UIImageView(image: UIImage(named: "ev-socket-unavailable"))
+        if let state = State(rawValue: state.lowercased()) {
+            self.sm = StateMachine(state: state)
+        } else {
+            self.sm = StateMachine(state: .unknown)
+        }
+        sm.stateChanged(update)
+    }
+
     private func animate(to toImg: UIImage?, _ completion: ((Bool) -> Void)?) {
         UIView.transition(with: imageView,
                           duration: transitionDuration,
@@ -69,7 +70,7 @@ public class ChargerOutlet {
     private func update(_ sm: StateMachine<State>) {
         switch sm.state {
         case .available:
-            self.animate(to: UIImage(named: "ev-socket"), nil)
+            self.animate(to: UIImage(named: "ev-socket-available"), nil)
         case .preparing:
             transitionDuration = 0.21
             self.animate(to: UIImage(named: "ev-socket-connected-1"), { _ in
@@ -102,13 +103,16 @@ public class ChargerOutlet {
             self.animate(to: UIImage(named: "ev-socket-faulted"), nil)
         case .unavailable:
             transitionDuration = 0.55
-            self.animate(to: UIImage(named: "ev-socket"), nil)
+            self.animate(to: UIImage(named: "ev-socket-unavailable"), nil)
         case .faulted:
             transitionDuration = 0.55
             self.animate(to: UIImage(named: "ev-socket-faulted"), nil)
         case .unknown:
             transitionDuration = 0.55
-            self.animate(to: UIImage(named: "ev-socket"), nil)
+            self.animate(to: UIImage(named: "ev-socket-unavailable"), nil)
+        }
+        if let callback = onUpdate {
+            callback(sm.state)
         }
     }
 }
