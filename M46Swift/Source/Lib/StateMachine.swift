@@ -20,7 +20,7 @@ public class StateMachine<T> : StateMachineState {
     
     var callback: ((_ sm: StateMachine<T>) -> Void)?
     
-    var state: T {
+    public var state: T {
         didSet {
             if let callback = callback {
                 callback(self)
