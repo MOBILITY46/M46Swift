@@ -57,7 +57,7 @@ public class ChargerOutlet {
     }
     
     private func loadImage(named img: String) {
-        let bundle = Bundle(for: Self.self)
+        let bundle = Bundle(for: ChargerOutlet.self)
         if let image = UIImage(named: img, in: bundle, compatibleWith: nil) {
             self.view.image = image
         } else {
