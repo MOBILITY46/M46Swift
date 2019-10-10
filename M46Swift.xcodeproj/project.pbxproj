@@ -178,6 +178,7 @@
 		FE03ABCE224CC0C000D4D84B = {
 			isa = PBXGroup;
 			children = (
+				FEDD1CA3234B31C800C3E40A /* Assets.xcassets */,
 				FE03ABDA224CC0C000D4D84B /* M46Swift */,
 				FE03ABE9224CC17500D4D84B /* CardExample */,
 				FE5BF9AF230ECA3C00C435D3 /* M46SwiftTests */,
@@ -201,7 +202,6 @@
 		FE03ABDA224CC0C000D4D84B /* M46Swift */ = {
 			isa = PBXGroup;
 			children = (
-				FEDD1CA3234B31C800C3E40A /* Assets.xcassets */,
 				FE03ABFE224CC3EC00D4D84B /* Source */,
 				FE03ABDB224CC0C000D4D84B /* M46Swift.h */,
 				FE03ABDC224CC0C000D4D84B /* Info.plist */,
