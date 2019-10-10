@@ -67,46 +67,25 @@ public class ChargerOutlet {
     private func update(_ sm: StateMachine<State>) {
         switch sm.state {
         case .available:
-            self.animate(to: UIImage(named: "ev-socket-available"), nil)
+            self.view.image = UIImage(named: "ev-socket-available")
         case .preparing:
-            transitionDuration = 0.21
-            self.animate(to: UIImage(named: "ev-socket-connected-1"), { _ in
-                self.animate(to: UIImage(named: "ev-socket-connected-2"), { _ in
-                    self.animate(to: UIImage(named: "ev-socket-connected-3"), { _ in
-                        self.animate(to: UIImage(named: "ev-socket-connected"), nil)
-                    })
-                })
-            })
+            self.view.image = UIImage(named: "ev-socket-connected")
         case .charging:
-            transitionDuration = 0.21
-            self.animate(to: UIImage(named: "ev-socket-charging-1"), { _ in
-                self.animate(to: UIImage(named: "ev-socket-charging-2"), { _ in
-                    self.animate(to: UIImage(named: "ev-socket-charging-3"), { _ in
-                        self.animate(to: UIImage(named: "ev-socket-charging"), nil)
-                    })
-                })
-            })
+            self.view.image = UIImage(named: "ev-socket-charging")
         case .suspendedEV:
-            transitionDuration = 0.55
-            self.animate(to: UIImage(named: "ev-socket-suspended"), nil)
+            self.view.image = UIImage(named: "ev-socket-suspended")
         case .suspendedEVSE:
-            transitionDuration = 0.55
-            self.animate(to: UIImage(named: "ev-socket-suspended"), nil)
+            self.view.image = UIImage(named: "ev-socket-suspended")
         case .finishing:
-            transitionDuration = 0.55
-            self.animate(to: UIImage(named: "ev-socket-preparing"), nil)
+            self.view.image = UIImage(named: "ev-socket-connected")
         case .reserved:
-            transitionDuration = 0.55
-            self.animate(to: UIImage(named: "ev-socket-faulted"), nil)
+            self.view.image = UIImage(named: "ev-socket-reserved")
         case .unavailable:
-            transitionDuration = 0.55
-            self.animate(to: UIImage(named: "ev-socket-unavailable"), nil)
+            self.view.image = UIImage(named: "ev-socket-unavailable")
         case .faulted:
-            transitionDuration = 0.55
-            self.animate(to: UIImage(named: "ev-socket-faulted"), nil)
+            self.view.image = UIImage(named: "ev-socket-faulted")
         case .unknown:
-            transitionDuration = 0.55
-            self.animate(to: UIImage(named: "ev-socket-unavailable"), nil)
+            self.view.image = UIImage(named: "ev-socket-unavailable")
         }
     }
 }

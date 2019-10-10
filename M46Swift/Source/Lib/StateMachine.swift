@@ -16,7 +16,7 @@ protocol StateMachineState {
     mutating func stateChanged(_ callback: @escaping (_ sm: StateMachine<T>) -> Void) -> Void
 }
 
-public class StateMachine<T> : StateMachineState {
+public class StateMachine<T> : NSObject, StateMachineState {
     
     var callback: ((_ sm: StateMachine<T>) -> Void)?
     
