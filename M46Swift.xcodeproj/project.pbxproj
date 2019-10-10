@@ -13,6 +13,7 @@
 		FE03ABFB224CC21900D4D84B /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE03ABFA224CC21900D4D84B /* Card.swift */; };
 		FE03ABFD224CC34800D4D84B /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE03ABFA224CC21900D4D84B /* Card.swift */; };
 		FE08685E234F31D300E7E85D /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE08685D234F31D300E7E85D /* Result.swift */; };
+		FE086861234F631300E7E85D /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5BFA082318226A00C435D3 /* Log.swift */; };
 		FE23EEB5234B635100652575 /* StateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE57CAF3234B61AA0031BCD9 /* StateMachine.swift */; };
 		FE23EEB6234B8F8A00652575 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEDD1CA3234B31C800C3E40A /* Assets.xcassets */; };
 		FE23EEB8234BA55B00652575 /* ChargeSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE23EEB7234BA55B00652575 /* ChargeSwitch.swift */; };
@@ -647,6 +648,7 @@
 			files = (
 				FE23EEC0234C74D200652575 /* ChargeSwitch.swift in Sources */,
 				FEDD1CB0234B321A00C3E40A /* ViewController.swift in Sources */,
+				FE086861234F631300E7E85D /* Log.swift in Sources */,
 				FEDD1CAC234B321A00C3E40A /* AppDelegate.swift in Sources */,
 				FE57CAEC234B607A0031BCD9 /* ChargerOutlet.swift in Sources */,
 				FE23EEB5234B635100652575 /* StateMachine.swift in Sources */,

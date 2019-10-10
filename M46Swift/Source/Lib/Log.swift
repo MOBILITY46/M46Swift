@@ -44,9 +44,7 @@ public class Log {
     public static func debug( _ object: Any = "",
                        filename: String = #file,
                        funcName: String = #function) {
-        #if DEBUG
         print("DEBUG: \(Date().toString()) \(LogEvent.d.rawValue) \(sourceFileName(filePath: filename)) \(funcName) -> \(object)")
-        #endif
     }
     
 }

@@ -6,8 +6,9 @@
 //  Copyright © 2019 se.mobility46. All rights reserved.
 //
 
-import Foundation
 import UIKit
+
+// TODO: Charging animation
 
 public class ChargerOutlet {
     
@@ -54,38 +55,38 @@ public class ChargerOutlet {
         }
         sm.stateChanged(update)
     }
-
-    private func animate(to toImg: UIImage?, _ completion: ((Bool) -> Void)?) {
-        UIView.transition(with: view,
-                          duration: transitionDuration,
-                          options: .transitionCrossDissolve,
-                          animations: { [weak self] in
-                            self?.view.image = toImg
-            }, completion: completion)
-    }
     
+    private func loadImage(named img: String) {
+        let bundle = Bundle(for: Self.self)
+        if let image = UIImage(named: img, in: bundle, compatibleWith: nil) {
+            self.view.image = image
+        } else {
+            Log.error("image named: \(img) not found")
+        }
+    }
+
     private func update(_ sm: StateMachine<State>) {
         switch sm.state {
         case .available:
-            self.view.image = UIImage(named: "ev-socket-available")
+            loadImage(named: "ev-socket-available")
         case .preparing:
-            self.view.image = UIImage(named: "ev-socket-connected")
+            loadImage(named: "ev-socket-connected")
         case .charging:
-            self.view.image = UIImage(named: "ev-socket-charging")
+            loadImage(named: "ev-socket-charging")
         case .suspendedEV:
-            self.view.image = UIImage(named: "ev-socket-suspended")
+            loadImage(named: "ev-socket-suspended")
         case .suspendedEVSE:
-            self.view.image = UIImage(named: "ev-socket-suspended")
+            loadImage(named: "ev-socket-suspended")
         case .finishing:
-            self.view.image = UIImage(named: "ev-socket-connected")
+            loadImage(named: "ev-socket-connected")
         case .reserved:
-            self.view.image = UIImage(named: "ev-socket-reserved")
+            loadImage(named: "ev-socket-reserved")
         case .unavailable:
-            self.view.image = UIImage(named: "ev-socket-unavailable")
+            loadImage(named: "ev-socket-unavailable")
         case .faulted:
-            self.view.image = UIImage(named: "ev-socket-faulted")
+            loadImage(named: "ev-socket-faulted")
         case .unknown:
-            self.view.image = UIImage(named: "ev-socket-unavailable")
+            loadImage(named: "ev-socket-unavailable")
         }
     }
 }
