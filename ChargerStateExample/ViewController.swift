@@ -20,17 +20,17 @@ class ViewController: UIViewController {
 
         outlet.size = 50
         
-        outlet.imageView.center = CGPoint(x: view.frame.width / 2, y: view.frame.height / 2)
+        outlet.view.center = CGPoint(x: view.frame.width / 2, y: view.frame.height / 2)
         chargeSwitch.center = CGPoint(x: view.frame.width / 2, y: view.frame.height / 3)
         
         chargeSwitch.addTarget(self, action: #selector(toggle), for: .valueChanged)
         
-        view.addSubview(outlet.imageView)
+        view.addSubview(outlet.view)
         view.addSubview(chargeSwitch)
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
-        outlet.imageView.isUserInteractionEnabled = true
-        outlet.imageView.addGestureRecognizer(tapGestureRecognizer)
+        outlet.view.isUserInteractionEnabled = true
+        outlet.view.addGestureRecognizer(tapGestureRecognizer)
     }
     
     @objc

@@ -29,15 +29,6 @@ public class ChargerOutlet {
     }
     
     private var transitionDuration: Double = 0.21
-    
-    var imageView: UIImageView
-
-    var size: Double = 20.0 {
-        didSet {
-            imageView.frame = CGRect(x: 0, y: 0, width: size, height: size)
-        }
-    }
-    
     private let sm: StateMachine<State>
     
     public var state: State = .unknown {
@@ -46,10 +37,16 @@ public class ChargerOutlet {
         }
     }
     
-    public var onUpdate: ((_ state: State) -> Void)?
+    public var view: UIImageView
     
+    public var size: Double = 20.0 {
+        didSet {
+            view.frame = CGRect(x: 0, y: 0, width: size, height: size)
+        }
+    }
+
     public init (state: String = "unknown") {
-        self.imageView = UIImageView(image: UIImage(named: "ev-socket-unavailable"))
+        self.view = UIImageView(image: UIImage(named: "ev-socket-unavailable"))
         if let state = State(rawValue: state.lowercased()) {
             self.sm = StateMachine(state: state)
         } else {
@@ -59,11 +56,11 @@ public class ChargerOutlet {
     }
 
     private func animate(to toImg: UIImage?, _ completion: ((Bool) -> Void)?) {
-        UIView.transition(with: imageView,
+        UIView.transition(with: view,
                           duration: transitionDuration,
                           options: .transitionCrossDissolve,
                           animations: { [weak self] in
-                            self?.imageView.image = toImg
+                            self?.view.image = toImg
             }, completion: completion)
     }
     
@@ -110,9 +107,6 @@ public class ChargerOutlet {
         case .unknown:
             transitionDuration = 0.55
             self.animate(to: UIImage(named: "ev-socket-unavailable"), nil)
-        }
-        if let callback = onUpdate {
-            callback(sm.state)
         }
     }
 }
