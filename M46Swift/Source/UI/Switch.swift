@@ -8,8 +8,14 @@
 
 import UIKit
 
-public class ChargeSwitch: UIControl {
+public protocol SwitchDelegate {
+    func valueChanged(on: Bool) -> Void
+}
+
+public class Switch: UIControl {
     var on: Bool = false
+    
+    public var delegate: SwitchDelegate? = nil
 
     public var padding: CGFloat = 1 {
         didSet {
@@ -79,6 +85,8 @@ public class ChargeSwitch: UIControl {
     
     override public func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
         super.beginTracking(touch, with: event)
+        on = !on
+        self.delegate?.valueChanged(on: on)
         self.animate()
         return true
     }
@@ -92,9 +100,9 @@ public class ChargeSwitch: UIControl {
 
 }
 
-typealias ChargeSwitchRenderer = ChargeSwitch
+typealias SwitchRenderer = Switch
 
-extension ChargeSwitchRenderer {
+extension SwitchRenderer {
     
     fileprivate func initializeSubviews() {
         if !isAnimating {
@@ -138,12 +146,11 @@ extension ChargeSwitchRenderer {
     }
 }
 
-typealias ChargeSwitchAnimation = ChargeSwitch
+typealias SwitchAnimation = Switch
 
-extension ChargeSwitchAnimation {
+extension SwitchAnimation {
     
     fileprivate func animate() {
-        on = !on
         isAnimating = true
         UIView.animate(
             withDuration: 0.5,

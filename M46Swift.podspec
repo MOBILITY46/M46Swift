@@ -4,7 +4,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'M46Swift'
-  s.version          = '1.3.11'
+  s.version          = '1.3.14'
   s.summary          = 'iOS modules'
   s.description      = 'A collection of swift modules used my Mobility46'
 
@@ -12,9 +12,8 @@ Pod::Spec.new do |s|
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'David Jobe' => 'david.jobe@mobility46.se' }
   s.source           = { :git => 'https://github.com/MOBILITY46/M46Swift.git', :tag => s.version.to_s }
-  
+
   s.ios.deployment_target = '9.0'
   s.swift_version = '5.0'
   s.source_files = 'M46Swift/Source/**/*'
-  s.resource_bundle = { 'M46Swift' => 'Assets.xcassets/**/*.{pdf,json}' }
 end

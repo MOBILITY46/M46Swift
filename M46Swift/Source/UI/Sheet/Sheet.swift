@@ -8,7 +8,7 @@
 
 import Foundation
 
-
+@available(*, unavailable)
 public enum SheetSize {
     case fullScreen
     case halfScreen

@@ -13,15 +13,8 @@
 		FE03ABFB224CC21900D4D84B /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE03ABFA224CC21900D4D84B /* Card.swift */; };
 		FE03ABFD224CC34800D4D84B /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE03ABFA224CC21900D4D84B /* Card.swift */; };
 		FE08685E234F31D300E7E85D /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE08685D234F31D300E7E85D /* Result.swift */; };
-		FE086861234F631300E7E85D /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5BFA082318226A00C435D3 /* Log.swift */; };
-		FE23EEB5234B635100652575 /* StateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE57CAF3234B61AA0031BCD9 /* StateMachine.swift */; };
-		FE23EEB6234B8F8A00652575 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEDD1CA3234B31C800C3E40A /* Assets.xcassets */; };
-		FE23EEB8234BA55B00652575 /* ChargeSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE23EEB7234BA55B00652575 /* ChargeSwitch.swift */; };
+		FE23EEB8234BA55B00652575 /* Switch.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE23EEB7234BA55B00652575 /* Switch.swift */; };
 		FE23EEBA234BA5D500652575 /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE23EEB9234BA5D500652575 /* Localized.swift */; };
-		FE23EEBB234C74B800652575 /* M46Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE03ABD8224CC0C000D4D84B /* M46Swift.framework */; };
-		FE23EEC0234C74D200652575 /* ChargeSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE23EEB7234BA55B00652575 /* ChargeSwitch.swift */; };
-		FE57CAE9234B356D0031BCD9 /* ChargerOutlet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE57CAE8234B356D0031BCD9 /* ChargerOutlet.swift */; };
-		FE57CAEC234B607A0031BCD9 /* ChargerOutlet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE57CAE8234B356D0031BCD9 /* ChargerOutlet.swift */; };
 		FE57CAF4234B61AA0031BCD9 /* StateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE57CAF3234B61AA0031BCD9 /* StateMachine.swift */; };
 		FE5BF97D230EC5EF00C435D3 /* M46Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE03ABD8224CC0C000D4D84B /* M46Swift.framework */; };
 		FE5BF985230EC81500C435D3 /* SliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5BF981230EC81500C435D3 /* SliderCell.swift */; };
@@ -60,19 +53,9 @@
 		FEABC551233228CD009AF03A /* SheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEABC550233228CD009AF03A /* SheetViewController.swift */; };
 		FEC043F6231D474D006CB554 /* AccordionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC043F5231D474D006CB554 /* AccordionCell.swift */; };
 		FEC043F8231D477A006CB554 /* AccordionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC043F7231D477A006CB554 /* AccordionController.swift */; };
-		FEDD1CA4234B31C800C3E40A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEDD1CA3234B31C800C3E40A /* Assets.xcassets */; };
-		FEDD1CAC234B321A00C3E40A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDD1CAB234B321A00C3E40A /* AppDelegate.swift */; };
-		FEDD1CB0234B321A00C3E40A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDD1CAF234B321A00C3E40A /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		FE23EEBD234C74B800652575 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FE03ABCF224CC0C000D4D84B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FE03ABD7224CC0C000D4D84B;
-			remoteInfo = M46Swift;
-		};
 		FE5BF9B4230ECA3C00C435D3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FE03ABCF224CC0C000D4D84B /* Project object */;
@@ -92,9 +75,8 @@
 		FE03ABF6224CC17600D4D84B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE03ABFA224CC21900D4D84B /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		FE08685D234F31D300E7E85D /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
-		FE23EEB7234BA55B00652575 /* ChargeSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeSwitch.swift; sourceTree = "<group>"; };
+		FE23EEB7234BA55B00652575 /* Switch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Switch.swift; sourceTree = "<group>"; };
 		FE23EEB9234BA5D500652575 /* Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localized.swift; sourceTree = "<group>"; };
-		FE57CAE8234B356D0031BCD9 /* ChargerOutlet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargerOutlet.swift; sourceTree = "<group>"; };
 		FE57CAF3234B61AA0031BCD9 /* StateMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateMachine.swift; sourceTree = "<group>"; };
 		FE5BF981230EC81500C435D3 /* SliderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderCell.swift; sourceTree = "<group>"; };
 		FE5BF982230EC81500C435D3 /* SliderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
@@ -133,11 +115,6 @@
 		FEABC550233228CD009AF03A /* SheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetViewController.swift; sourceTree = "<group>"; };
 		FEC043F5231D474D006CB554 /* AccordionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionCell.swift; sourceTree = "<group>"; };
 		FEC043F7231D477A006CB554 /* AccordionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionController.swift; sourceTree = "<group>"; };
-		FEDD1CA3234B31C800C3E40A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		FEDD1CA9234B321A00C3E40A /* ChargerStateExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChargerStateExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FEDD1CAB234B321A00C3E40A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FEDD1CAF234B321A00C3E40A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		FEDD1CB9234B321B00C3E40A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,25 +141,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FEDD1CA6234B321A00C3E40A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FE23EEBB234C74B800652575 /* M46Swift.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		FE03ABCE224CC0C000D4D84B = {
 			isa = PBXGroup;
 			children = (
-				FEDD1CA3234B31C800C3E40A /* Assets.xcassets */,
 				FE03ABDA224CC0C000D4D84B /* M46Swift */,
 				FE03ABE9224CC17500D4D84B /* CardExample */,
 				FE5BF9AF230ECA3C00C435D3 /* M46SwiftTests */,
-				FEDD1CAA234B321A00C3E40A /* ChargerStateExample */,
 				FE03ABD9224CC0C000D4D84B /* Products */,
 				FE5BF97C230EC5EF00C435D3 /* Frameworks */,
 			);
@@ -194,7 +161,6 @@
 				FE03ABD8224CC0C000D4D84B /* M46Swift.framework */,
 				FE03ABE8224CC17500D4D84B /* CardExample.app */,
 				FE5BF9AE230ECA3C00C435D3 /* M46SwiftTests.xctest */,
-				FEDD1CA9234B321A00C3E40A /* ChargerStateExample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -248,7 +214,7 @@
 		FE5BF980230EC6DB00C435D3 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				FEDD1CA2234B318500C3E40A /* Charger */,
+				FE23EEB7234BA55B00652575 /* Switch.swift */,
 				FEABC54D233227E3009AF03A /* Sheet */,
 				FE5BF993230EC8D600C435D3 /* Card */,
 				FE5BF992230EC8CC00C435D3 /* Accordion */,
@@ -393,25 +359,6 @@
 			path = Sheet;
 			sourceTree = "<group>";
 		};
-		FEDD1CA2234B318500C3E40A /* Charger */ = {
-			isa = PBXGroup;
-			children = (
-				FE57CAE8234B356D0031BCD9 /* ChargerOutlet.swift */,
-				FE23EEB7234BA55B00652575 /* ChargeSwitch.swift */,
-			);
-			path = Charger;
-			sourceTree = "<group>";
-		};
-		FEDD1CAA234B321A00C3E40A /* ChargerStateExample */ = {
-			isa = PBXGroup;
-			children = (
-				FEDD1CAB234B321A00C3E40A /* AppDelegate.swift */,
-				FEDD1CAF234B321A00C3E40A /* ViewController.swift */,
-				FEDD1CB9234B321B00C3E40A /* Info.plist */,
-			);
-			path = ChargerStateExample;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -479,31 +426,13 @@
 			productReference = FE5BF9AE230ECA3C00C435D3 /* M46SwiftTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		FEDD1CA8234B321A00C3E40A /* ChargerStateExample */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FEDD1CBA234B321B00C3E40A /* Build configuration list for PBXNativeTarget "ChargerStateExample" */;
-			buildPhases = (
-				FEDD1CA5234B321A00C3E40A /* Sources */,
-				FEDD1CA6234B321A00C3E40A /* Frameworks */,
-				FEDD1CA7234B321A00C3E40A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				FE23EEBE234C74B800652575 /* PBXTargetDependency */,
-			);
-			name = ChargerStateExample;
-			productName = ChargerStateExample;
-			productReference = FEDD1CA9234B321A00C3E40A /* ChargerStateExample.app */;
-			productType = "com.apple.product-type.application";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		FE03ABCF224CC0C000D4D84B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1100;
+				LastSwiftUpdateCheck = 1110;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = se.mobility46;
 				TargetAttributes = {
@@ -516,9 +445,6 @@
 					};
 					FE5BF9AD230ECA3C00C435D3 = {
 						CreatedOnToolsVersion = 10.3;
-					};
-					FEDD1CA8234B321A00C3E40A = {
-						CreatedOnToolsVersion = 11.0;
 					};
 				};
 			};
@@ -538,7 +464,6 @@
 				FE03ABD7224CC0C000D4D84B /* M46Swift */,
 				FE03ABE7224CC17500D4D84B /* CardExample */,
 				FE5BF9AD230ECA3C00C435D3 /* M46SwiftTests */,
-				FEDD1CA8234B321A00C3E40A /* ChargerStateExample */,
 			);
 		};
 /* End PBXProject section */
@@ -548,7 +473,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FEDD1CA4234B31C800C3E40A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -566,14 +490,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FEDD1CA7234B321A00C3E40A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FE23EEB6234B8F8A00652575 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -588,7 +504,6 @@
 				FE5BF9D3230EE13300C435D3 /* Transformer.swift in Sources */,
 				FEABC551233228CD009AF03A /* SheetViewController.swift in Sources */,
 				FE08685E234F31D300E7E85D /* Result.swift in Sources */,
-				FE57CAE9234B356D0031BCD9 /* ChargerOutlet.swift in Sources */,
 				FE5BF98E230EC8AB00C435D3 /* Toast.swift in Sources */,
 				FE5BF986230EC81500C435D3 /* SliderView.swift in Sources */,
 				FE5BF98C230EC8AB00C435D3 /* Modal.swift in Sources */,
@@ -600,7 +515,7 @@
 				FE5BF9DB230FE37200C435D3 /* StoreObserver.swift in Sources */,
 				FE5BF9D1230EE08B00C435D3 /* MemoryStore.swift in Sources */,
 				FE5BFA092318226A00C435D3 /* Log.swift in Sources */,
-				FE23EEB8234BA55B00652575 /* ChargeSwitch.swift in Sources */,
+				FE23EEB8234BA55B00652575 /* Switch.swift in Sources */,
 				FE5BF987230EC81500C435D3 /* SliderLayout.swift in Sources */,
 				FE5BF9CF230EE06800C435D3 /* DiskStore.swift in Sources */,
 				FE57CAF4234B61AA0031BCD9 /* StateMachine.swift in Sources */,
@@ -642,27 +557,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FEDD1CA5234B321A00C3E40A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FE23EEC0234C74D200652575 /* ChargeSwitch.swift in Sources */,
-				FEDD1CB0234B321A00C3E40A /* ViewController.swift in Sources */,
-				FE086861234F631300E7E85D /* Log.swift in Sources */,
-				FEDD1CAC234B321A00C3E40A /* AppDelegate.swift in Sources */,
-				FE57CAEC234B607A0031BCD9 /* ChargerOutlet.swift in Sources */,
-				FE23EEB5234B635100652575 /* StateMachine.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		FE23EEBE234C74B800652575 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FE03ABD7224CC0C000D4D84B /* M46Swift */;
-			targetProxy = FE23EEBD234C74B800652575 /* PBXContainerItemProxy */;
-		};
 		FE5BF9B5230ECA3C00C435D3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = FE03ABD7224CC0C000D4D84B /* M46Swift */;
@@ -918,42 +815,6 @@
 			};
 			name = Release;
 		};
-		FEDD1CBB234B321B00C3E40A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = G376TJJ4KF;
-				INFOPLIST_FILE = ChargerStateExample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = se.mobility46.ChargerStateExample;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		FEDD1CBC234B321B00C3E40A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = G376TJJ4KF;
-				INFOPLIST_FILE = ChargerStateExample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = se.mobility46.ChargerStateExample;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -989,15 +850,6 @@
 			buildConfigurations = (
 				FE5BF9B7230ECA3C00C435D3 /* Debug */,
 				FE5BF9B8230ECA3C00C435D3 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FEDD1CBA234B321B00C3E40A /* Build configuration list for PBXNativeTarget "ChargerStateExample" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FEDD1CBB234B321B00C3E40A /* Debug */,
-				FEDD1CBC234B321B00C3E40A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

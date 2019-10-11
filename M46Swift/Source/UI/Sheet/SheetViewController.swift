@@ -8,11 +8,10 @@
 
 import UIKit
 
+@available(*, unavailable)
 class SheetViewController: UIViewController {
     
     public private (set) var childViewController: UIViewController!
     
     public let containerView = UIView()
-
-    
 }
