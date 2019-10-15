@@ -13,6 +13,9 @@
 		FE03ABFB224CC21900D4D84B /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE03ABFA224CC21900D4D84B /* Card.swift */; };
 		FE03ABFD224CC34800D4D84B /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE03ABFA224CC21900D4D84B /* Card.swift */; };
 		FE08685E234F31D300E7E85D /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE08685D234F31D300E7E85D /* Result.swift */; };
+		FE08688F2350BBCC00E7E85D /* JWT.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE08688E2350BBCC00E7E85D /* JWT.swift */; };
+		FE0868972350BF5100E7E85D /* JWT+Base64URLEncoded.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0868962350BF5100E7E85D /* JWT+Base64URLEncoded.swift */; };
+		FE08689A2350D17800E7E85D /* JWTTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0868992350D17700E7E85D /* JWTTests.swift */; };
 		FE23EEB8234BA55B00652575 /* Switch.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE23EEB7234BA55B00652575 /* Switch.swift */; };
 		FE23EEBA234BA5D500652575 /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE23EEB9234BA5D500652575 /* Localized.swift */; };
 		FE57CAF4234B61AA0031BCD9 /* StateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE57CAF3234B61AA0031BCD9 /* StateMachine.swift */; };
@@ -75,6 +78,9 @@
 		FE03ABF6224CC17600D4D84B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE03ABFA224CC21900D4D84B /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		FE08685D234F31D300E7E85D /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		FE08688E2350BBCC00E7E85D /* JWT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWT.swift; sourceTree = "<group>"; };
+		FE0868962350BF5100E7E85D /* JWT+Base64URLEncoded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JWT+Base64URLEncoded.swift"; sourceTree = "<group>"; };
+		FE0868992350D17700E7E85D /* JWTTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWTTests.swift; sourceTree = "<group>"; };
 		FE23EEB7234BA55B00652575 /* Switch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Switch.swift; sourceTree = "<group>"; };
 		FE23EEB9234BA5D500652575 /* Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localized.swift; sourceTree = "<group>"; };
 		FE57CAF3234B61AA0031BCD9 /* StateMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateMachine.swift; sourceTree = "<group>"; };
@@ -188,11 +194,29 @@
 		FE03ABFE224CC3EC00D4D84B /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				FE08688D2350BA5300E7E85D /* JWT */,
 				FE5BF9BC230ECB0800C435D3 /* Lib */,
 				FE5BF980230EC6DB00C435D3 /* UI */,
 				FE5BF97F230EC6D200C435D3 /* Cache */,
 			);
 			path = Source;
+			sourceTree = "<group>";
+		};
+		FE08688D2350BA5300E7E85D /* JWT */ = {
+			isa = PBXGroup;
+			children = (
+				FE08688E2350BBCC00E7E85D /* JWT.swift */,
+				FE0868962350BF5100E7E85D /* JWT+Base64URLEncoded.swift */,
+			);
+			path = JWT;
+			sourceTree = "<group>";
+		};
+		FE0868982350D16300E7E85D /* JWT */ = {
+			isa = PBXGroup;
+			children = (
+				FE0868992350D17700E7E85D /* JWTTests.swift */,
+			);
+			path = JWT;
 			sourceTree = "<group>";
 		};
 		FE5BF97C230EC5EF00C435D3 /* Frameworks */ = {
@@ -273,6 +297,7 @@
 		FE5BF9AF230ECA3C00C435D3 /* M46SwiftTests */ = {
 			isa = PBXGroup;
 			children = (
+				FE0868982350D16300E7E85D /* JWT */,
 				FE5BF9E5230FF35600C435D3 /* Lib */,
 				FE5BF9DE230FF1E200C435D3 /* Cache */,
 				FE5BF9B2230ECA3C00C435D3 /* Info.plist */,
@@ -505,6 +530,7 @@
 				FEABC551233228CD009AF03A /* SheetViewController.swift in Sources */,
 				FE08685E234F31D300E7E85D /* Result.swift in Sources */,
 				FE5BF98E230EC8AB00C435D3 /* Toast.swift in Sources */,
+				FE0868972350BF5100E7E85D /* JWT+Base64URLEncoded.swift in Sources */,
 				FE5BF986230EC81500C435D3 /* SliderView.swift in Sources */,
 				FE5BF98C230EC8AB00C435D3 /* Modal.swift in Sources */,
 				FE5BF985230EC81500C435D3 /* SliderCell.swift in Sources */,
@@ -522,6 +548,7 @@
 				FE5BF9CD230EDEE200C435D3 /* AsyncStore.swift in Sources */,
 				FE5BF9C2230ECD3D00C435D3 /* Serde.swift in Sources */,
 				FE5BF9C9230ED4B700C435D3 /* DiskConfig.swift in Sources */,
+				FE08688F2350BBCC00E7E85D /* JWT.swift in Sources */,
 				FEABC54F233227FC009AF03A /* Sheet.swift in Sources */,
 				FE5BF9CB230ED4C700C435D3 /* MemoryConfig.swift in Sources */,
 				FE5BF9C6230ECE9400C435D3 /* Expiry.swift in Sources */,
@@ -552,6 +579,7 @@
 				FE5BF9E2230FF25700C435D3 /* User.swift in Sources */,
 				FE5BFA042317D5B400C435D3 /* HybridStoreTests.swift in Sources */,
 				FE5BF9E7230FF37D00C435D3 /* ExpiryTests.swift in Sources */,
+				FE08689A2350D17800E7E85D /* JWTTests.swift in Sources */,
 				FE5BF9E4230FF2E100C435D3 /* Test+Extensions.swift in Sources */,
 				FE5BF9F42310426F00C435D3 /* AsyncStoreTests.swift in Sources */,
 			);

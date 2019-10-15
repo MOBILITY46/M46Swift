@@ -20,6 +20,13 @@ public enum Result<T> {
             return Result<U>.err(err)
         }
     }
+    
+    public func isOk() -> Bool {
+        switch self {
+        case .ok(_):
+            return true
+        default:
+            return false
+        }
+    }
 }
-
-public typealias M46Result = Result
