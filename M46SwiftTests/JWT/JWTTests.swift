@@ -9,7 +9,7 @@
 import XCTest
 @testable import M46Swift
 
-struct TestSession: Session {
+struct TestSession: JWTSession {
     typealias Header = SessionHeader
     typealias Claims = SessionClaims
     

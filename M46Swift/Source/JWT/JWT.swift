@@ -8,12 +8,12 @@
 
 import Foundation
 
-public protocol Session: Decodable {
+public protocol JWTSession: Decodable {
     associatedtype Header = Decodable
     associatedtype Claims = Decodable
 }
 
-public struct JWT<T: Session> {
+public struct JWT<T: JWTSession> {
     
     enum Error : Swift.Error {
         case invalid(Component)
@@ -57,7 +57,7 @@ public struct JWT<T: Session> {
     }
 }
 
-fileprivate class JWTDecoder<T, Key: CodingKey> : Decoder where T: Session {
+fileprivate class JWTDecoder<T, Key: CodingKey> : Decoder where T: JWTSession {
     var codingPath: [CodingKey] = []
     var userInfo: [CodingUserInfoKey : Any] = [:]
     
@@ -137,7 +137,7 @@ extension JWTDecoder: KeyedDecodingContainerProtocol {
     
 }
 
-private struct UnkeyedContainer<T, K>: UnkeyedDecodingContainer, SingleValueDecodingContainer where T: Session, K: CodingKey {
+private struct UnkeyedContainer<T, K>: UnkeyedDecodingContainer, SingleValueDecodingContainer where T: JWTSession, K: CodingKey {
     var decoder: JWTDecoder<T, K>
     
     var codingPath: [CodingKey] { return [] }
