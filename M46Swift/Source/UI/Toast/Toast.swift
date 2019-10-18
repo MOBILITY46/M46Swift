@@ -86,19 +86,21 @@ public class Toast : UIView {
     }
     
     public func show() {
-        guard let keyWindow = UIApplication.shared.keyWindow else {
-            return
-        }
-        configureConstraints(keyWindow)
-        UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseIn, animations: {
-            self.alpha = 0.8
-        }, completion: { _ in
-            UIView.animate(withDuration: 0.5, delay: self.duration, options: .curveEaseOut, animations: {
-                self.alpha = 0.0
-            }, completion: {_ in
-                keyWindow.removeFromSuperview()
+        DispatchQueue.main.async {
+            guard let keyWindow = UIApplication.shared.keyWindow else {
+                return
+            }
+            self.configureConstraints(keyWindow)
+            UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseIn, animations: {
+                self.alpha = 0.8
+            }, completion: { _ in
+                UIView.animate(withDuration: 0.5, delay: self.duration, options: .curveEaseOut, animations: {
+                    self.alpha = 0.0
+                }, completion: {_ in
+                    keyWindow.removeFromSuperview()
+                })
             })
-        })
+        }
     }
     
     override open func layoutSubviews() {
