@@ -92,6 +92,7 @@ public class Switch: UIControl {
     }
     
     public func toggle(on: Bool) {
+        if self.on == on { return }
         thumbView.frame.origin.x = on ? onPoint.x : offPoint.x
         backgroundColor = on ? onTintColor : offTintColor
         self.on = on
