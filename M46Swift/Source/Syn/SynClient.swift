@@ -37,6 +37,8 @@ public class SynClient {
     
     private func handleResponse(res: SynResponse) {
         
+        Log.debug("res: \(res)")
+        
         switch res.versionStatus {
         case .latest:
             return

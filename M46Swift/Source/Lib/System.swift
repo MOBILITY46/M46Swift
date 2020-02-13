@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct System {
 
@@ -68,7 +69,7 @@ struct System {
         case "iPhone11,2":                              return "iPhone XS"
         case "iPhone11,4", "iPhone11,6":                return "iPhone XS Max"
         case "iPhone11,8":                              return "iPhone XR"
-        case "i386", "x86_64":                          return "Simulator \(mapToDevice(identifier: ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] ?? "iOS"))"
+        case "i386", "x86_64":                          return "\(mapToDevice(identifier: ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] ?? "iOS"))"
         default:                                        return identifier
         }
     }
@@ -78,7 +79,7 @@ struct System {
 
 extension System: CustomStringConvertible {
     var description: String {
-        let desc = "\(appName)/\(appVersion) iOS/\(version) Apple; model=\(model)"
+        let desc = "\(appName)/\(appVersion); iOS/\(version); brand=Apple; model=\(model);"
         return desc
     }
 }
