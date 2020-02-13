@@ -12,7 +12,6 @@
 		FE03ABED224CC17500D4D84B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE03ABEC224CC17500D4D84B /* ViewController.swift */; };
 		FE03ABFB224CC21900D4D84B /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE03ABFA224CC21900D4D84B /* Card.swift */; };
 		FE03ABFD224CC34800D4D84B /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE03ABFA224CC21900D4D84B /* Card.swift */; };
-		FE08685E234F31D300E7E85D /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE08685D234F31D300E7E85D /* Result.swift */; };
 		FE08688F2350BBCC00E7E85D /* JWT.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE08688E2350BBCC00E7E85D /* JWT.swift */; };
 		FE0868972350BF5100E7E85D /* JWT+Base64URLEncoded.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0868962350BF5100E7E85D /* JWT+Base64URLEncoded.swift */; };
 		FE08689A2350D17800E7E85D /* JWTTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0868992350D17700E7E85D /* JWTTests.swift */; };
@@ -52,6 +51,17 @@
 		FE5BF9F42310426F00C435D3 /* AsyncStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5BF9F32310426F00C435D3 /* AsyncStoreTests.swift */; };
 		FE5BFA042317D5B400C435D3 /* HybridStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5BFA032317D5B400C435D3 /* HybridStoreTests.swift */; };
 		FE5BFA092318226A00C435D3 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5BFA082318226A00C435D3 /* Log.swift */; };
+		FE7E718923F597DF00973EF6 /* SynClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7E718823F597DF00973EF6 /* SynClient.swift */; };
+		FE7E718A23F597DF00973EF6 /* SynClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7E718823F597DF00973EF6 /* SynClient.swift */; };
+		FE7E718D23F5981900973EF6 /* SynClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7E718C23F5981900973EF6 /* SynClientTests.swift */; };
+		FE7E718F23F59A1300973EF6 /* System.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7E718E23F59A1300973EF6 /* System.swift */; };
+		FE7E719023F59A1300973EF6 /* System.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7E718E23F59A1300973EF6 /* System.swift */; };
+		FE7E719223F59BE500973EF6 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7E719123F59BE400973EF6 /* HttpClient.swift */; };
+		FE7E719323F59BE500973EF6 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7E719123F59BE400973EF6 /* HttpClient.swift */; };
+		FE7E719923F5A69000973EF6 /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7E719823F5A69000973EF6 /* HttpError.swift */; };
+		FE7E719A23F5A69000973EF6 /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7E719823F5A69000973EF6 /* HttpError.swift */; };
+		FE7E719C23F5B29100973EF6 /* SynResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7E719B23F5B29100973EF6 /* SynResponse.swift */; };
+		FE7E719D23F5B29100973EF6 /* SynResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7E719B23F5B29100973EF6 /* SynResponse.swift */; };
 		FEABC54F233227FC009AF03A /* Sheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEABC54E233227FC009AF03A /* Sheet.swift */; };
 		FEABC551233228CD009AF03A /* SheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEABC550233228CD009AF03A /* SheetViewController.swift */; };
 		FEC043F6231D474D006CB554 /* AccordionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC043F5231D474D006CB554 /* AccordionCell.swift */; };
@@ -77,7 +87,6 @@
 		FE03ABEC224CC17500D4D84B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FE03ABF6224CC17600D4D84B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE03ABFA224CC21900D4D84B /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
-		FE08685D234F31D300E7E85D /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		FE08688E2350BBCC00E7E85D /* JWT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWT.swift; sourceTree = "<group>"; };
 		FE0868962350BF5100E7E85D /* JWT+Base64URLEncoded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JWT+Base64URLEncoded.swift"; sourceTree = "<group>"; };
 		FE0868992350D17700E7E85D /* JWTTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWTTests.swift; sourceTree = "<group>"; };
@@ -117,6 +126,12 @@
 		FE5BF9F32310426F00C435D3 /* AsyncStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncStoreTests.swift; sourceTree = "<group>"; };
 		FE5BFA032317D5B400C435D3 /* HybridStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HybridStoreTests.swift; sourceTree = "<group>"; };
 		FE5BFA082318226A00C435D3 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		FE7E718823F597DF00973EF6 /* SynClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynClient.swift; sourceTree = "<group>"; };
+		FE7E718C23F5981900973EF6 /* SynClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynClientTests.swift; sourceTree = "<group>"; };
+		FE7E718E23F59A1300973EF6 /* System.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = System.swift; sourceTree = "<group>"; };
+		FE7E719123F59BE400973EF6 /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
+		FE7E719823F5A69000973EF6 /* HttpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpError.swift; sourceTree = "<group>"; };
+		FE7E719B23F5B29100973EF6 /* SynResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynResponse.swift; sourceTree = "<group>"; };
 		FEABC54E233227FC009AF03A /* Sheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sheet.swift; sourceTree = "<group>"; };
 		FEABC550233228CD009AF03A /* SheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetViewController.swift; sourceTree = "<group>"; };
 		FEC043F5231D474D006CB554 /* AccordionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionCell.swift; sourceTree = "<group>"; };
@@ -194,10 +209,13 @@
 		FE03ABFE224CC3EC00D4D84B /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				FE7E719423F5A2F600973EF6 /* Http */,
+				FE7E718723F597BB00973EF6 /* Syn */,
 				FE08688D2350BA5300E7E85D /* JWT */,
 				FE5BF9BC230ECB0800C435D3 /* Lib */,
 				FE5BF980230EC6DB00C435D3 /* UI */,
 				FE5BF97F230EC6D200C435D3 /* Cache */,
+				FE7E718E23F59A1300973EF6 /* System.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -297,6 +315,7 @@
 		FE5BF9AF230ECA3C00C435D3 /* M46SwiftTests */ = {
 			isa = PBXGroup;
 			children = (
+				FE7E718B23F597ED00973EF6 /* Syn */,
 				FE0868982350D16300E7E85D /* JWT */,
 				FE5BF9E5230FF35600C435D3 /* Lib */,
 				FE5BF9DE230FF1E200C435D3 /* Cache */,
@@ -332,7 +351,6 @@
 				FE5BFA082318226A00C435D3 /* Log.swift */,
 				FE57CAF3234B61AA0031BCD9 /* StateMachine.swift */,
 				FE23EEB9234BA5D500652575 /* Localized.swift */,
-				FE08685D234F31D300E7E85D /* Result.swift */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -373,6 +391,32 @@
 				FE5BF9E1230FF25700C435D3 /* User.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		FE7E718723F597BB00973EF6 /* Syn */ = {
+			isa = PBXGroup;
+			children = (
+				FE7E718823F597DF00973EF6 /* SynClient.swift */,
+				FE7E719B23F5B29100973EF6 /* SynResponse.swift */,
+			);
+			path = Syn;
+			sourceTree = "<group>";
+		};
+		FE7E718B23F597ED00973EF6 /* Syn */ = {
+			isa = PBXGroup;
+			children = (
+				FE7E718C23F5981900973EF6 /* SynClientTests.swift */,
+			);
+			path = Syn;
+			sourceTree = "<group>";
+		};
+		FE7E719423F5A2F600973EF6 /* Http */ = {
+			isa = PBXGroup;
+			children = (
+				FE7E719123F59BE400973EF6 /* HttpClient.swift */,
+				FE7E719823F5A69000973EF6 /* HttpError.swift */,
+			);
+			path = Http;
 			sourceTree = "<group>";
 		};
 		FEABC54D233227E3009AF03A /* Sheet */ = {
@@ -525,20 +569,24 @@
 				FE5BF98D230EC8AB00C435D3 /* Dialog.swift in Sources */,
 				FE23EEBA234BA5D500652575 /* Localized.swift in Sources */,
 				FE5BF9DD230FF02500C435D3 /* HybridStore.swift in Sources */,
+				FE7E719C23F5B29100973EF6 /* SynResponse.swift in Sources */,
 				FE5BF9C4230ECE4300C435D3 /* Entry.swift in Sources */,
 				FE5BF9D3230EE13300C435D3 /* Transformer.swift in Sources */,
+				FE7E718923F597DF00973EF6 /* SynClient.swift in Sources */,
 				FEABC551233228CD009AF03A /* SheetViewController.swift in Sources */,
-				FE08685E234F31D300E7E85D /* Result.swift in Sources */,
 				FE5BF98E230EC8AB00C435D3 /* Toast.swift in Sources */,
 				FE0868972350BF5100E7E85D /* JWT+Base64URLEncoded.swift in Sources */,
 				FE5BF986230EC81500C435D3 /* SliderView.swift in Sources */,
+				FE7E719223F59BE500973EF6 /* HttpClient.swift in Sources */,
 				FE5BF98C230EC8AB00C435D3 /* Modal.swift in Sources */,
 				FE5BF985230EC81500C435D3 /* SliderCell.swift in Sources */,
 				FE5BF9D5230EE55100C435D3 /* StoreAware.swift in Sources */,
 				FE5BF988230EC81500C435D3 /* Accordion.swift in Sources */,
+				FE7E718F23F59A1300973EF6 /* System.swift in Sources */,
 				FEC043F6231D474D006CB554 /* AccordionCell.swift in Sources */,
 				FE5BF9D7230EECB100C435D3 /* MD5.swift in Sources */,
 				FE5BF9DB230FE37200C435D3 /* StoreObserver.swift in Sources */,
+				FE7E719923F5A69000973EF6 /* HttpError.swift in Sources */,
 				FE5BF9D1230EE08B00C435D3 /* MemoryStore.swift in Sources */,
 				FE5BFA092318226A00C435D3 /* Log.swift in Sources */,
 				FE23EEB8234BA55B00652575 /* Switch.swift in Sources */,
@@ -574,14 +622,20 @@
 			files = (
 				FE5BF9E0230FF1F300C435D3 /* TestHelper.swift in Sources */,
 				FE5BF9EC23101CC000C435D3 /* DiskStoreTests.swift in Sources */,
+				FE7E719023F59A1300973EF6 /* System.swift in Sources */,
 				FE5BF9EE23101F6900C435D3 /* MemoryStoreTests.swift in Sources */,
+				FE7E719A23F5A69000973EF6 /* HttpError.swift in Sources */,
+				FE7E719D23F5B29100973EF6 /* SynResponse.swift in Sources */,
 				FE5BF9EA23100AC900C435D3 /* MD5Tests.swift in Sources */,
 				FE5BF9E2230FF25700C435D3 /* User.swift in Sources */,
 				FE5BFA042317D5B400C435D3 /* HybridStoreTests.swift in Sources */,
+				FE7E719323F59BE500973EF6 /* HttpClient.swift in Sources */,
 				FE5BF9E7230FF37D00C435D3 /* ExpiryTests.swift in Sources */,
+				FE7E718A23F597DF00973EF6 /* SynClient.swift in Sources */,
 				FE08689A2350D17800E7E85D /* JWTTests.swift in Sources */,
 				FE5BF9E4230FF2E100C435D3 /* Test+Extensions.swift in Sources */,
 				FE5BF9F42310426F00C435D3 /* AsyncStoreTests.swift in Sources */,
+				FE7E718D23F5981900973EF6 /* SynClientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

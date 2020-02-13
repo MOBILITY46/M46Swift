@@ -55,40 +55,41 @@ extension StoreAware {
 
 public protocol AsyncStoreAware {
     associatedtype T
+    associatedtype E : Error
 
-    func entry(forKey key: String, _ completion: @escaping (_ result: Result<Entry<T>>) -> Void)
+    func entry(forKey key: String, _ completion: @escaping (_ result: Result<Entry<T>, E>) -> Void)
     
-    func add(_ object: T, forKey key: String, expiry: Expiry?, _ completion: @escaping (_ result: Result<()>) -> Void)
+    func add(_ object: T, forKey key: String, expiry: Expiry?, _ completion: @escaping (_ result: Result<(), E>) -> Void)
     
-    func remove(forKey key: String, _ completion: @escaping (_ result: Result<()>) -> Void)
+    func remove(forKey key: String, _ completion: @escaping (_ result: Result<(), E>) -> Void)
     
-    func removeAll(_ completion: @escaping (_ result: Result<()>) -> Void)
+    func removeAll(_ completion: @escaping (_ result: Result<(), E>) -> Void)
     
-    func removeExpired(_ completion: @escaping (_ result: Result<()>) -> Void)
+    func removeExpired(_ completion: @escaping (_ result: Result<(), E>) -> Void)
     
-    func object(forKey key: String, _ completion: @escaping (_ result: Result<T>) -> Void)
+    func object(forKey key: String, _ completion: @escaping (_ result: Result<T, E>) -> Void)
     
-    func exists(forKey key: String, _ completion: @escaping (_ result: Result<Bool>) -> Void)
+    func exists(forKey key: String, _ completion: @escaping (_ result: Result<Bool, E>) -> Void)
     
-    func expired(forKey key: String, _ completion: @escaping (_ result: Result<Bool>) -> Void)
+    func expired(forKey key: String, _ completion: @escaping (_ result: Result<Bool, E>) -> Void)
 }
 
 extension AsyncStoreAware {
     
-    public func object(forKey key: String, _ completion: @escaping (Result<T>) -> Void) {
-        entry(forKey: key, { (result: Result<Entry<T>>) in
+    public func object(forKey key: String, _ completion: @escaping (Result<T, E>) -> Void) {
+        entry(forKey: key, { (result: Result<Entry<T>, E>) in
             completion(result.map { $0.object })
         })
     }
     
-    public func exists(forKey key: String, _ completion: @escaping (Result<Bool>) -> Void) {
-        object(forKey: key, { (result: Result<T>) in
+    public func exists(forKey key: String, _ completion: @escaping (Result<Bool, E>) -> Void) {
+        object(forKey: key, { (result: Result<T, E>) in
             completion(result.map { _ in true })
         })
     }
     
-    public func expired(forKey key: String, _ completion: @escaping (_ result: Result<Bool>) -> Void) {
-        entry(forKey: key, { (result: Result<Entry<T>>) in
+    public func expired(forKey key: String, _ completion: @escaping (_ result: Result<Bool, E>) -> Void) {
+        entry(forKey: key, { (result: Result<Entry<T>, E>) in
             completion(result.map { $0.expiry.isExpired })
         })
     }

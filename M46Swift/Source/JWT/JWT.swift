@@ -15,12 +15,12 @@ public protocol JWTSession: Decodable {
 
 public struct JWT<T: JWTSession> {
     
-    enum Error : Swift.Error {
+    public enum Error : Swift.Error {
         case invalid(Component)
         case decode(Swift.Error)
         case typeMismatch
         
-        enum Component {
+        public enum Component {
             case header
             case claims
         }
@@ -37,22 +37,22 @@ public struct JWT<T: JWTSession> {
         case claims
     }
 
-    public func decode(_ type: T.Type) -> Result<T> {
+    public func decode(_ type: T.Type) -> Result<T, Error> {
         let components = base64.components(separatedBy: ".")
         guard let headerData = JWT.data(base64: components[0]) else {
-            return Result.err(Error.invalid(.header))
+            return .failure(.invalid(.header))
         }
 
         guard let claimsData = JWT.data(base64: components[1]) else {
-            return Result.err(Error.invalid(.claims))
+            return .failure(.invalid(.claims))
         }
         
         let decoder = JWTDecoder<T, Keys>(header: headerData, claims: claimsData)
         do {
             let decoded = try decoder.decode(type)
-            return Result.ok(decoded)
+            return .success(decoded)
         } catch {
-            return Result.err(Error.decode(error))
+            return .failure(.decode(error))
         }
     }
 }
