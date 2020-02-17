@@ -12,10 +12,10 @@ import UIKit
 
 public class Dialog : UIView, Modal {
     
-    var background = UIView()
-    var dialogView = UIView()
-    var parent: UIViewController
-    var dismissable: Bool = false
+    public var background = UIView()
+    public var dialogView = UIView()
+    public var parent: UIViewController
+    public var dismissable: Bool = false
     
     public convenience init(parent: UIViewController, title: String, text: String) {
         self.init(frame: UIScreen.main.bounds)
