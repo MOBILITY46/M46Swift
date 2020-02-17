@@ -13,15 +13,15 @@ public struct SynResponse : Decodable {
     private let message: String?
     private let details: String?
     
-    var needsUpdate: Bool {
+    public var needsUpdate: Bool {
         return versionStatus == .updateRequired
     }
     
-    var hasUpdate: Bool {
+    public var hasUpdate: Bool {
         return versionStatus != .latest
     }
     
-    var info: (String, String) {
+    public var info: (String, String) {
         return (message ?? "", details ?? "")
     }
     

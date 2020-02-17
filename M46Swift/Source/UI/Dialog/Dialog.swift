@@ -10,19 +10,19 @@ import UIKit
 
 // TODO: Add possibility to process and follow links in the content text
 
-class Dialog : UIView, Modal {
+public class Dialog : UIView, Modal {
     
     var background = UIView()
     var dialogView = UIView()
     var parent: UIViewController
     var dismissable: Bool = false
     
-    convenience init(parent: UIViewController, title: String, text: String) {
+    public convenience init(parent: UIViewController, title: String, text: String) {
         self.init(frame: UIScreen.main.bounds)
         initialize(parent, title, text, nil)
     }
     
-    convenience init(parent: UIViewController, title: String, text: String, closeIcon: UIImage) {
+    public convenience init(parent: UIViewController, title: String, text: String, closeIcon: UIImage) {
         self.init(frame: UIScreen.main.bounds)
         initialize(parent, title, text, closeIcon)
     }

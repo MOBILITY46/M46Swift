@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol Modal {
+public protocol Modal {
     var background: UIView { get }
     var dialogView: UIView { get set }
     func show(animated: Bool)
@@ -19,7 +19,7 @@ protocol Modal {
 
 extension Modal where Self: UIView {
     
-    func show(animated: Bool) {
+    public func show(animated: Bool) {
         
         background.alpha = 0
         dialogView.center = CGPoint(x: self.center.x, y: self.frame.height + self.dialogView.frame.height / 2)
@@ -48,7 +48,7 @@ extension Modal where Self: UIView {
         }
     }
     
-    func dismiss(animated: Bool) {
+    public func dismiss(animated: Bool) {
         if animated {
             UIView.animate(withDuration: 0.33, animations: {
                 self.background.alpha = 0

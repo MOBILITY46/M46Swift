@@ -53,8 +53,6 @@ public class HttpClient {
         urlReq.httpMethod = req.method
         urlReq.httpBody = req.body
         
-        
-        
         urlReq.addValue("application/json", forHTTPHeaderField: "content-type")
         urlReq.addValue(system.description, forHTTPHeaderField: "user-agent")
         urlReq.addValue(UUID().uuidString, forHTTPHeaderField: "x-request-id")
