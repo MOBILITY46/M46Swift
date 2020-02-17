@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct System {
+public struct System {
 
     var appVersion: String {
         let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
@@ -82,7 +82,7 @@ struct System {
 // Ladkoll/3.4.3 iPhone/12.4.1 Apple; model=iPhone 10X
 
 extension System: CustomStringConvertible {
-    var description: String {
+    public var description: String {
         let desc = "\(appName)/\(appVersion); iOS/\(version); brand=Apple; model=\(model); lang=\(language);"
         Log.info("System info: \(desc)")
         return desc
