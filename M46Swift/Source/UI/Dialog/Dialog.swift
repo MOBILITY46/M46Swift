@@ -12,20 +12,23 @@ import UIKit
 
 class Dialog : UIView, Modal {
     
-    var backgroundView = UIView()
+    var background = UIView()
     var dialogView = UIView()
+    var parent: UIViewController
+    var dismissable: Bool = false
     
-    convenience init(title: String, text: String) {
+    convenience init(parent: UIViewController, title: String, text: String) {
         self.init(frame: UIScreen.main.bounds)
-        initialize(title, text, nil)
+        initialize(parent, title, text, nil)
     }
     
-    convenience init(title: String, text: String, closeIcon: UIImage) {
+    convenience init(parent: UIViewController, title: String, text: String, closeIcon: UIImage) {
         self.init(frame: UIScreen.main.bounds)
-        initialize(title, text, closeIcon)
+        initialize(parent, title, text, closeIcon)
     }
     
     override init(frame: CGRect) {
+        self.parent = UIViewController()
         super.init(frame: frame)
     }
     
@@ -33,16 +36,19 @@ class Dialog : UIView, Modal {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func initialize(_ title: String, _ text: String, _ closeIcon: UIImage?) {
+    func initialize(_ parent: UIViewController, _ title: String, _ text: String, _ closeIcon: UIImage?) {
+        self.parent = parent
         dialogView.clipsToBounds = true
         
-        backgroundView.frame = frame
-        backgroundView.backgroundColor = UIColor.black
-        backgroundView.alpha = 0.6
-        backgroundView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didClose)))
-        addSubview(backgroundView)
+        background.frame = frame
+        background.backgroundColor = UIColor.black
+        background.alpha = 0.6
+        if dismissable {
+            background.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didClose)))
+        }
+        addSubview(background)
         
-        let dialogViewWidth = frame.width - 32
+        let dialogViewWidth = UIScreen.main.bounds.width - 32
         
         let titleLabel = UILabel(frame: CGRect(x: 8, y: 8, width: dialogViewWidth - 40, height: 30))
         titleLabel.text = title
@@ -50,17 +56,19 @@ class Dialog : UIView, Modal {
         titleLabel.textAlignment = .left
         dialogView.addSubview(titleLabel)
         
-        if let icon = closeIcon {
-            let closeButton = UIButton(frame: CGRect(x: dialogViewWidth - 32, y: 8, width: 24, height: 30))
-            closeButton.setImage(icon, for: .normal)
-            closeButton.addTarget(self, action: #selector(didClose), for: .touchUpInside)
-            dialogView.addSubview(closeButton)
+        if dismissable {
+            if let icon = closeIcon {
+                let closeButton = UIButton(frame: CGRect(x: dialogViewWidth - 32, y: 8, width: 24, height: 30))
+                closeButton.setImage(icon, for: .normal)
+                closeButton.addTarget(self, action: #selector(didClose), for: .touchUpInside)
+                dialogView.addSubview(closeButton)
+            }
         }
 
         let line = UIView()
-        line.frame.origin = CGPoint(x: 0, y: titleLabel.frame.height + 8)
-        line.frame.size = CGSize(width: dialogViewWidth, height: 1)
-        line.backgroundColor = UIColor.groupTableViewBackground
+        line.frame.origin = CGPoint(x: 10, y: titleLabel.frame.height + 8)
+        line.frame.size = CGSize(width: dialogViewWidth - 20, height: 1)
+        line.backgroundColor = .systemBlue
         dialogView.addSubview(line)
         
         let textView = UILabel()

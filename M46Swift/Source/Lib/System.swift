@@ -48,6 +48,10 @@ struct System {
         return ""
     }
     
+    var language: String {
+        return Locale.current.languageCode ?? "en"
+    }
+    
     
     func mapToDevice(identifier: String) -> String {
         switch identifier {
@@ -79,7 +83,8 @@ struct System {
 
 extension System: CustomStringConvertible {
     var description: String {
-        let desc = "\(appName)/\(appVersion); iOS/\(version); brand=Apple; model=\(model);"
+        let desc = "\(appName)/\(appVersion); iOS/\(version); brand=Apple; model=\(model); lang=\(language);"
+        Log.info("System info: \(desc)")
         return desc
     }
 }

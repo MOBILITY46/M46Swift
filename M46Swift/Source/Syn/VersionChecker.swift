@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class SynRequest : HttpRequest {
     typealias Response = SynResponse
@@ -15,12 +16,15 @@ class SynRequest : HttpRequest {
     var body: Data? = nil
 }
 
-public class SynClient {
+public class VersionChecker {
     
-    let httpClient: HttpClient = HttpClient(baseURL: "https://syn.mobility46.se")
-    
-    let dialog: Dialog = Dialog()
-    
+    private let httpClient: HttpClient = HttpClient(baseURL: "https://syn.mobility46.se")
+    let callback: (SynResponse) -> Void
+
+    public required init(_ callback: @escaping (SynResponse) -> Void) {
+        self.callback = callback
+    }
+
     public func performCheck() {
         let request = SynRequest()
         httpClient.send(request, { result in
@@ -36,20 +40,9 @@ public class SynClient {
     }
     
     private func handleResponse(res: SynResponse) {
-        
-        Log.debug("res: \(res)")
-        
-        switch res.versionStatus {
-        case .latest:
-            return
-        case .updateRequired:
-            // TODO(David): Lock app & inform user
-            return
-        case .updateAvailable:
-            // TODO(David): Inform user
-            return
+        DispatchQueue.main.async {
+            self.callback(res)
+
         }
     }
-    
-    
 }

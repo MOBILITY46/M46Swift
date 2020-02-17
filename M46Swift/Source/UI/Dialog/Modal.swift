@@ -9,24 +9,26 @@
 import UIKit
 
 protocol Modal {
-    var backgroundView: UIView { get }
+    var background: UIView { get }
     var dialogView: UIView { get set }
     func show(animated: Bool)
     func dismiss(animated: Bool)
+    var parent: UIViewController { get }
+    var dismissable: Bool { get }
 }
 
 extension Modal where Self: UIView {
     
     func show(animated: Bool) {
         
-        backgroundView.alpha = 0
+        background.alpha = 0
         dialogView.center = CGPoint(x: self.center.x, y: self.frame.height + self.dialogView.frame.height / 2)
-        UIApplication.shared.delegate?.window??.rootViewController?.view.addSubview(self)
+        parent.view.addSubview(self)
         
         if animated {
             
             UIView.animate(withDuration: 0.33, animations: {
-                self.backgroundView.alpha = 0.66
+                self.background.alpha = 0.66
             })
             
             UIView.animate(withDuration: 0.33,
@@ -40,7 +42,7 @@ extension Modal where Self: UIView {
             
         } else {
             
-            self.backgroundView.alpha = 0.66
+            self.background.alpha = 0.66
             self.dialogView.center  = self.center
             
         }
@@ -49,7 +51,7 @@ extension Modal where Self: UIView {
     func dismiss(animated: Bool) {
         if animated {
             UIView.animate(withDuration: 0.33, animations: {
-                self.backgroundView.alpha = 0
+                self.background.alpha = 0
             }, completion: { (completed) in
                 
             })
