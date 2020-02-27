@@ -13,7 +13,7 @@ public protocol SwitchDelegate {
 }
 
 public class Switch: UIControl {
-    var on: Bool = false
+    public var on: Bool = false
     
     public var delegate: SwitchDelegate? = nil
 
