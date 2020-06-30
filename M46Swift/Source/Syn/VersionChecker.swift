@@ -12,8 +12,13 @@ import UIKit
 class SynRequest : HttpRequest {
     typealias Response = SynResponse
     var method: String = "get"
-    var path: String = "/verify"
+    var path: String = "/api/v1/verify"
     var body: Data? = nil
+}
+
+public struct AvailabilityResult {
+    let successfulRequest: Bool
+    let availableVersion: Bool?
 }
 
 public class VersionChecker {
@@ -24,6 +29,31 @@ public class VersionChecker {
     public required init(_ callback: @escaping (SynResponse) -> Void) {
         self.callback = callback
     }
+    
+    /*
+    public func checkAvailability() -> AvailabilityResult {
+        guard let info = Bundle.main.infoDictionary,
+            let currentVersion = info["CFBundleShortVersionString"] as? String,
+            let identifier = info["CFBundleIdentifier"] as? String,
+            let url = URL(string: "http://itunes.apple.com/lookup?bundleId=\(identifier)") else {
+                Log.error("Could not construct itunes lookup request")
+                return AvailabilityResult(successfulRequest: false, availableVersion: nil)
+        }
+        do {
+                
+            let data = try Data(contentsOf: url)
+            guard let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any] else {
+                Log.error("Invalid response")
+                return AvailabilityResult(successfulRequest: false, availableVersion: nil)
+            }
+
+        } catch {
+
+        }
+
+    }
+ 
+    */
 
     public func performCheck() {
         let request = SynRequest()

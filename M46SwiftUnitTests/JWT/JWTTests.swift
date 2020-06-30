@@ -44,13 +44,8 @@ class JWTTests: XCTestCase {
 
     func testDecode() throws {
         let jwt = JWT<TestSession>(base64: testToken)
-        let decoded = jwt.decode(TestSession.self)
-        XCTAssertTrue(decoded.isOk(), "decoded: \(decoded.map { v in v })")
+        let decoded = try jwt.decode(TestSession.self).get()
         
-        if case .ok(let s) = decoded {
-            XCTAssertEqual(s.claims.userId, 111, s.claims.description)
-        }
-        
-        
+        XCTAssertEqual(decoded.claims.userId, 111, decoded.claims.description)
     }
 }

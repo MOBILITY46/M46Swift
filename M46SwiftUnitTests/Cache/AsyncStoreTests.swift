@@ -34,23 +34,23 @@ class AsyncStoreTests: XCTestCase {
         
         cache.add(object, forKey: "user", expiry: nil, { res in
             switch res {
-                case .ok(_):
+                case .success(_):
                     expectationOne.fulfill()
                     return
-                case .err(let err):
+                case .failure(let err):
                     XCTFail(err.localizedDescription)
             }
         })
         
         cache.entry(forKey: "user", { res in
             switch res {
-            case .ok(let entry):
+            case .success(let entry):
                 if entry.expiry.isExpired == false {
                     print("Entry: \(entry)")
                     expectationTwo.fulfill()
                     return
                 }
-            case .err(let err):
+            case .failure(let err):
                 XCTFail(err.localizedDescription)
             }
         })
