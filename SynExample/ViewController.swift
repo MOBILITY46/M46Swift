@@ -10,11 +10,10 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var checker: VersionChecker? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        checker = VersionChecker { result in
+        Syn { result in
             let lock: Bool = result.needsUpdate == true
             if result.hasUpdate {
                 let (message, details) = result.info
@@ -22,9 +21,7 @@ class ViewController: UIViewController {
                 dialog.dismissable = lock
                 dialog.show(animated: true)
             }
-        }
-        
-        checker?.performCheck()
+        }.performCheck(<#T##currentVersion: <<error type>>##<<error type>>#>, bundleId: <#T##String#>)
     }
 
 }

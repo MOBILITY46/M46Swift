@@ -28,6 +28,7 @@
 		FE11B06B24AB651000BC6EFD /* HybridStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5BFA032317D5B400C435D3 /* HybridStoreTests.swift */; };
 		FE11B06C24AB651500BC6EFD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5BF9E1230FF25700C435D3 /* User.swift */; };
 		FE11B06D24AB651900BC6EFD /* JWTTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0868992350D17700E7E85D /* JWTTests.swift */; };
+		FE11B06F24AB80F600BC6EFD /* AppStoreResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE11B06E24AB80F600BC6EFD /* AppStoreResponse.swift */; };
 		FE23EEB8234BA55B00652575 /* Switch.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE23EEB7234BA55B00652575 /* Switch.swift */; };
 		FE23EEBA234BA5D500652575 /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE23EEB9234BA5D500652575 /* Localized.swift */; };
 		FE3DF8A923F5C83B0099529D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3DF8A823F5C83B0099529D /* AppDelegate.swift */; };
@@ -36,7 +37,7 @@
 		FE3DF8B023F5C83B0099529D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE3DF8AE23F5C83B0099529D /* Main.storyboard */; };
 		FE3DF8B223F5C83C0099529D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE3DF8B123F5C83C0099529D /* Assets.xcassets */; };
 		FE3DF8B523F5C83C0099529D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE3DF8B323F5C83C0099529D /* LaunchScreen.storyboard */; };
-		FE3DF8BA23F5C85B0099529D /* VersionChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7E718823F597DF00973EF6 /* VersionChecker.swift */; };
+		FE3DF8BA23F5C85B0099529D /* Syn.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7E718823F597DF00973EF6 /* Syn.swift */; };
 		FE3DF8BB23F5C85E0099529D /* SynResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7E719B23F5B29100973EF6 /* SynResponse.swift */; };
 		FE3DF8BC23F5C8640099529D /* Dialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5BF98A230EC8AB00C435D3 /* Dialog.swift */; };
 		FE3DF8BD23F5C8680099529D /* Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5BF989230EC8AB00C435D3 /* Modal.swift */; };
@@ -68,7 +69,7 @@
 		FE5BF9DB230FE37200C435D3 /* StoreObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5BF9DA230FE37200C435D3 /* StoreObserver.swift */; };
 		FE5BF9DD230FF02500C435D3 /* HybridStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5BF9DC230FF02500C435D3 /* HybridStore.swift */; };
 		FE5BFA092318226A00C435D3 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5BFA082318226A00C435D3 /* Log.swift */; };
-		FE7E718923F597DF00973EF6 /* VersionChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7E718823F597DF00973EF6 /* VersionChecker.swift */; };
+		FE7E718923F597DF00973EF6 /* Syn.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7E718823F597DF00973EF6 /* Syn.swift */; };
 		FE7E718F23F59A1300973EF6 /* System.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7E718E23F59A1300973EF6 /* System.swift */; };
 		FE7E719223F59BE500973EF6 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7E719123F59BE400973EF6 /* HttpClient.swift */; };
 		FE7E719923F5A69000973EF6 /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7E719823F5A69000973EF6 /* HttpError.swift */; };
@@ -107,6 +108,7 @@
 		FE11B04F24AB59B100BC6EFD /* SemVerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemVerTests.swift; sourceTree = "<group>"; };
 		FE11B05824AB5C0B00BC6EFD /* M46SwiftUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = M46SwiftUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE11B05C24AB5C0B00BC6EFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE11B06E24AB80F600BC6EFD /* AppStoreResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreResponse.swift; sourceTree = "<group>"; };
 		FE23EEB7234BA55B00652575 /* Switch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Switch.swift; sourceTree = "<group>"; };
 		FE23EEB9234BA5D500652575 /* Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localized.swift; sourceTree = "<group>"; };
 		FE3DF8A623F5C83B0099529D /* SynExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SynExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,7 +151,7 @@
 		FE5BF9F32310426F00C435D3 /* AsyncStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncStoreTests.swift; sourceTree = "<group>"; };
 		FE5BFA032317D5B400C435D3 /* HybridStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HybridStoreTests.swift; sourceTree = "<group>"; };
 		FE5BFA082318226A00C435D3 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
-		FE7E718823F597DF00973EF6 /* VersionChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionChecker.swift; sourceTree = "<group>"; };
+		FE7E718823F597DF00973EF6 /* Syn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Syn.swift; sourceTree = "<group>"; };
 		FE7E718E23F59A1300973EF6 /* System.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = System.swift; sourceTree = "<group>"; };
 		FE7E719123F59BE400973EF6 /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		FE7E719823F5A69000973EF6 /* HttpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpError.swift; sourceTree = "<group>"; };
@@ -451,8 +453,9 @@
 		FE7E718723F597BB00973EF6 /* Syn */ = {
 			isa = PBXGroup;
 			children = (
-				FE7E718823F597DF00973EF6 /* VersionChecker.swift */,
+				FE7E718823F597DF00973EF6 /* Syn.swift */,
 				FE7E719B23F5B29100973EF6 /* SynResponse.swift */,
+				FE11B06E24AB80F600BC6EFD /* AppStoreResponse.swift */,
 			);
 			path = Syn;
 			sourceTree = "<group>";
@@ -650,7 +653,7 @@
 				FE7E719C23F5B29100973EF6 /* SynResponse.swift in Sources */,
 				FE5BF9C4230ECE4300C435D3 /* Entry.swift in Sources */,
 				FE5BF9D3230EE13300C435D3 /* Transformer.swift in Sources */,
-				FE7E718923F597DF00973EF6 /* VersionChecker.swift in Sources */,
+				FE7E718923F597DF00973EF6 /* Syn.swift in Sources */,
 				FEABC551233228CD009AF03A /* SheetViewController.swift in Sources */,
 				FE5BF98E230EC8AB00C435D3 /* Toast.swift in Sources */,
 				FE0868972350BF5100E7E85D /* JWT+Base64URLEncoded.swift in Sources */,
@@ -682,6 +685,7 @@
 				FE5BF9C6230ECE9400C435D3 /* Expiry.swift in Sources */,
 				FE03ABFB224CC21900D4D84B /* Card.swift in Sources */,
 				FEC043F8231D477A006CB554 /* AccordionController.swift in Sources */,
+				FE11B06F24AB80F600BC6EFD /* AppStoreResponse.swift in Sources */,
 				FE5BF9D9230F0C2E00C435D3 /* Store+Transform.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -729,7 +733,7 @@
 				FE3DF8BC23F5C8640099529D /* Dialog.swift in Sources */,
 				FE3DF8BD23F5C8680099529D /* Modal.swift in Sources */,
 				FE3DF8AB23F5C83B0099529D /* SceneDelegate.swift in Sources */,
-				FE3DF8BA23F5C85B0099529D /* VersionChecker.swift in Sources */,
+				FE3DF8BA23F5C85B0099529D /* Syn.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

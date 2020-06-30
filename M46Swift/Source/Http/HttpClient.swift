@@ -13,43 +13,66 @@ public class HttpClient {
     private let system = System()
     private let baseURL: String
     
+    enum Error : Swift.Error {
+        case malformedURL
+    }
+    
     public required init(baseURL: String = "") {
         self.baseURL = baseURL
     }
 
     public func send<T : HttpRequest>(_ request: T, token: String? = nil,
                            _ completion: @escaping ResultCallback<T.Response>) {
-        let urlReq = createURLRequest(request, token: token)
+        do {
+            let urlReq = try createURLRequest(request, token: token)
+            Log.info("request: \(urlReq)")
 
-        let task = session.dataTask(with: urlReq) { (data, response, error) in
-        
-            if let err = error {
-                completion(Swift.Result.failure(.unknown(err)))
-                return
-            }
-
-            if let response = response as? HTTPURLResponse {
-                if response.statusCode / 100 != 2 {
-                    completion(.failure(.status(response.statusCode)))
+            let task = session.dataTask(with: urlReq) { (data, response, error) in
+    
+                if let err = error {
+                    completion(Swift.Result.failure(.unknown(err)))
                     return
                 }
-            }
-            
-            if let data = data {
-                do {
-                    let responseData = try JSONDecoder().decode(T.Response.self, from: data)
-                    completion(.success(responseData))
-                } catch {
-                    completion(.failure(.decoder(error)))
+
+                if let response = response as? HTTPURLResponse {
+                    if response.statusCode / 100 != 2 {
+                        completion(.failure(.status(response.statusCode)))
+                        return
+                    }
+                }
+    
+                if let data = data {
+                    do {
+                        let responseData = try JSONDecoder().decode(T.Response.self, from: data)
+                        completion(.success(responseData))
+                    } catch {
+                        completion(.failure(.decoder(error)))
+                    }
                 }
             }
+            task.resume()
+        } catch {
+            Log.error(error)
         }
-        task.resume()
     }
     
-    private func createURLRequest<T : HttpRequest>(_ req: T, token: String?) -> URLRequest {
+    private func createURLRequest<T : HttpRequest>(_ req: T, token: String?) throws -> URLRequest {
+        guard var urlComponents = URLComponents(string: "\(baseURL)\(req.path)") else {
+            throw Error.malformedURL
+        }
         
-        var urlReq = URLRequest(url: URL(string: "\(baseURL)\(req.path)")!)
+        if let query = req.query {
+            let queryItems = query.map { (key, value) in
+                URLQueryItem(name: key, value: value)
+            }
+            urlComponents.queryItems = queryItems
+        }
+        
+        guard let url = urlComponents.url else {
+            throw Error.malformedURL
+        }
+        
+        var urlReq = URLRequest(url: url)
         urlReq.httpMethod = req.method
         urlReq.httpBody = req.body
         
@@ -76,6 +99,7 @@ public protocol HttpRequest: Encodable {
     var path: String { get }
     var method: String { get }
     var body: Data? { get }
+    var query: Dictionary<String, String>? { get }
 }
 
 public typealias ResultCallback<T> = (Swift.Result<T, HttpError>) -> Void

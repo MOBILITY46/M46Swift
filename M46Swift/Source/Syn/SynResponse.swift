@@ -9,23 +9,11 @@
 import Foundation
 
 public struct SynResponse : Decodable {
-    private let versionStatus: VersionStatus
-    private let message: String?
-    private let details: String?
+    let versionStatus: VersionStatus
+    let message: String?
+    let details: String?
     
-    public var needsUpdate: Bool {
-        return versionStatus == .updateRequired
-    }
-    
-    public var hasUpdate: Bool {
-        return versionStatus != .latest
-    }
-    
-    public var info: (String, String) {
-        return (message ?? "", details ?? "")
-    }
-    
-    private enum VersionStatus : String, Decodable {
+    public enum VersionStatus : String, Decodable {
         case updateAvailable = "updateAvailable"
         case updateRequired = "updateRequired"
         case latest = "latest"
