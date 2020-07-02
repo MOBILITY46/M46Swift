@@ -13,7 +13,7 @@ public struct SynResponse : Decodable {
     let message: String?
     let details: String?
     
-    public func getAppStoreLink(appID: String) -> URL {
+    public func getAppStoreLink(_ appID: String) -> URL {
         return URL(string: "https://apps.apple.com/us/app/id\(appID)")!
     }
     

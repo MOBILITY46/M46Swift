@@ -25,25 +25,24 @@ class AppStoreRequest : HttpRequest {
     var query: Dictionary<String, String>?
 }
 
-public class SynClient {
+public struct SynResult {
+    public var verifiedVersion: SemVer?
+    public let message: String?
+    public let details: String?
+    public let status: SynResponse.VersionStatus
+    public let appStoreLink: URL
     
-    public struct SynResult {
-        var verifiedVersion: SemVer?
-        let message: String?
-        let details: String?
-        let status: SynResponse.VersionStatus
-        
-        var currentIncompatible: Bool {
-            status == .updateRequired
-        }
-        
-        var lockDevice: Bool {
-            currentIncompatible && verifiedVersion != nil
-        }
+    public var currentIncompatible: Bool {
+        status == .updateRequired
     }
     
-    
-    
+    public var lockDevice: Bool {
+        currentIncompatible && verifiedVersion != nil
+    }
+}
+
+public class SynClient {
+
     private let httpClient: HttpClient = HttpClient(baseURL: "")
     let callback: (Result<SynResult, Error>) -> Void
 
@@ -69,14 +68,20 @@ public class SynClient {
         })
     }
 
-    public func performCheck(_ currentVersion: SemVer, bundleId: String) {
+    public func performCheck(_ currentVersion: SemVer, bundleId: String, appID: String) {
         let request = SynRequest()
         httpClient.send(request, { res in
             switch res {
             case .success(let data):
                 if data.versionStatus != .latest {
                     self.newVersionAvailable(current: currentVersion, bundleId: bundleId, { version in
-                        let result = SynResult(verifiedVersion: version, message: data.message, details: data.details, status: data.versionStatus)
+                        let result = SynResult(
+                            verifiedVersion: version,
+                            message: data.message,
+                            details: data.details,
+                            status: data.versionStatus,
+                            appStoreLink: data.getAppStoreLink(appID)
+                        )
                         self.handleResponse(res: .success(result))
                     })
                 }
