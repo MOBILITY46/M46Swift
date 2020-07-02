@@ -25,7 +25,7 @@ class AppStoreRequest : HttpRequest {
     var query: Dictionary<String, String>?
 }
 
-public class Syn {
+public class SynClient {
     
     public struct SynResult {
         var verifiedVersion: SemVer?

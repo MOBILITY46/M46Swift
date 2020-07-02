@@ -34,8 +34,5 @@ public func == (left: SemVer, right: SemVer) -> Bool {
 }
 
 public func < (left: SemVer, right: SemVer) -> Bool {
-    for (l, r) in zip([left.major, left.minor, left.patch], [right.major, right.minor, right.patch]) {
-        return l.compare(r, options: .numeric) == .orderedAscending
-    }
-    return false
+    return left.major < right.major || left.minor < right.minor || left.patch < right.patch
 }

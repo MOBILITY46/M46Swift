@@ -8,12 +8,13 @@
 
 import UIKit
 
+
 class ViewController: UIViewController {
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        Syn { result in
+        SynClient { result in
             let lock: Bool = result.needsUpdate == true
             if result.hasUpdate {
                 let (message, details) = result.info
@@ -21,7 +22,7 @@ class ViewController: UIViewController {
                 dialog.dismissable = lock
                 dialog.show(animated: true)
             }
-        }.performCheck(<#T##currentVersion: <<error type>>##<<error type>>#>, bundleId: <#T##String#>)
+        }.performCheck(SemVer.parse("1.0.0"), bundleId: "se.mobility46.demo")
     }
 
 }

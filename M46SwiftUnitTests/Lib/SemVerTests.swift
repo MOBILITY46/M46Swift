@@ -31,4 +31,17 @@ class SemVerTests: XCTestCase {
         assert(try SemVer.parse("1.b.c"), throws: SemVer.ParsingError.missingVersionComponent(.minor))
         assert(try SemVer.parse("1.0.c"), throws: SemVer.ParsingError.missingVersionComponent(.patch))
     }
+    
+    func testComparable() throws {
+        let cond1 = try SemVer.parse("1.0.0") > SemVer.parse("0.1.0")
+        XCTAssertTrue(cond1)
+        let cond2 = try SemVer.parse("0.1.0") == SemVer.parse("0.1.0")
+        XCTAssertTrue(cond2)
+        let cond3 = try SemVer.parse("1.0.9") > SemVer.parse("1.0.0")
+        XCTAssertTrue(cond3)
+        let cond4 = try SemVer.parse("1.9.0") > SemVer.parse("1.1.0")
+        XCTAssertTrue(cond4)
+        let cond5 = try SemVer.parse("0.0.1") == SemVer.parse("0.0.1")
+        XCTAssertTrue(cond5)
+    }
 }

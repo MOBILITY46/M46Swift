@@ -13,6 +13,10 @@ public struct SynResponse : Decodable {
     let message: String?
     let details: String?
     
+    public func getAppStoreLink(appID: String) -> URL {
+        return URL(string: "https://apps.apple.com/us/app/id\(appID)")!
+    }
+    
     public enum VersionStatus : String, Decodable {
         case updateAvailable = "updateAvailable"
         case updateRequired = "updateRequired"
