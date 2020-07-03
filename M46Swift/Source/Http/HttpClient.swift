@@ -28,25 +28,26 @@ public class HttpClient {
             Log.info("request: \(urlReq)")
 
             let task = session.dataTask(with: urlReq) { (data, response, error) in
-    
                 if let err = error {
-                    completion(Swift.Result.failure(.unknown(err)))
+                    completion(.failure(.unknown(err)))
                     return
                 }
 
-                if let response = response as? HTTPURLResponse {
-                    if response.statusCode / 100 != 2 {
-                        completion(.failure(.status(response.statusCode)))
-                        return
-                    }
-                }
-    
-                if let data = data {
+                if let data = data, let response = response as? HTTPURLResponse {
+
                     do {
+                        let raw = String(decoding: data, as: UTF8.self)
+                        Log.debug("raw: \(raw)")
                         let responseData = try JSONDecoder().decode(T.Response.self, from: data)
                         completion(.success(responseData))
                     } catch {
-                        completion(.failure(.decoder(error)))
+                        if response.statusCode / 100 != 2 {
+                            Log.error(response)
+                            completion(.failure(.status(response.statusCode)))
+                        } else {
+                            
+                            completion(.failure(.decoder(error)))
+                        }
                     }
                 }
             }
@@ -62,7 +63,7 @@ public class HttpClient {
         }
         
         if let query = req.query {
-            let queryItems = query.map { (key, value) in
+            let queryItems = query.map { (value, key) in
                 URLQueryItem(name: key, value: value)
             }
             urlComponents.queryItems = queryItems
@@ -80,8 +81,6 @@ public class HttpClient {
         urlReq.addValue(system.description, forHTTPHeaderField: "user-agent")
         urlReq.addValue(UUID().uuidString, forHTTPHeaderField: "x-request-id")
         
-        Log.info("\(system.description)")
-
         if let token = token {
             urlReq.addValue("Token \(token)", forHTTPHeaderField: "authorization")
         }
@@ -102,4 +101,4 @@ public protocol HttpRequest: Encodable {
     var query: Dictionary<String, String>? { get }
 }
 
-public typealias ResultCallback<T> = (Swift.Result<T, HttpError>) -> Void
+public typealias ResultCallback<T> = (Result<T, HttpError>) -> Void

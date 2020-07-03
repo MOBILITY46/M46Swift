@@ -84,7 +84,6 @@ public struct System {
 extension System: CustomStringConvertible {
     public var description: String {
         let desc = "\(appName)/\(appVersion); iOS/\(version); brand=Apple; model=\(model); lang=\(language);"
-        Log.info("System info: \(desc)")
         return desc
     }
 }

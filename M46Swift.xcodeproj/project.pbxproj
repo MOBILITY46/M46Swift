@@ -79,6 +79,8 @@
 		FEABC551233228CD009AF03A /* SheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEABC550233228CD009AF03A /* SheetViewController.swift */; };
 		FEC043F6231D474D006CB554 /* AccordionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC043F5231D474D006CB554 /* AccordionCell.swift */; };
 		FEC043F8231D477A006CB554 /* AccordionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC043F7231D477A006CB554 /* AccordionController.swift */; };
+		FEF9707A24AF4E4A0068ADBC /* SemVer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE11B04A24AB38E800BC6EFD /* SemVer.swift */; };
+		FEF9707B24AF4E4D0068ADBC /* SemVer+Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE11B04D24AB3BC200BC6EFD /* SemVer+Parser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -726,11 +728,13 @@
 				FE3DF8C023F5C8730099529D /* System.swift in Sources */,
 				FE3DF8AD23F5C83B0099529D /* ViewController.swift in Sources */,
 				FE3DF8C123F5C8770099529D /* Log.swift in Sources */,
+				FEF9707A24AF4E4A0068ADBC /* SemVer.swift in Sources */,
 				FE3DF8BF23F5C86F0099529D /* HttpError.swift in Sources */,
 				FE3DF8BB23F5C85E0099529D /* SynResponse.swift in Sources */,
 				FE3DF8BE23F5C86C0099529D /* HttpClient.swift in Sources */,
 				FE3DF8A923F5C83B0099529D /* AppDelegate.swift in Sources */,
 				FE3DF8BC23F5C8640099529D /* Dialog.swift in Sources */,
+				FEF9707B24AF4E4D0068ADBC /* SemVer+Parser.swift in Sources */,
 				FE3DF8BD23F5C8680099529D /* Modal.swift in Sources */,
 				FE3DF8AB23F5C83B0099529D /* SceneDelegate.swift in Sources */,
 				FE3DF8BA23F5C85B0099529D /* Syn.swift in Sources */,

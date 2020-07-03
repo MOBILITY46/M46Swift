@@ -14,7 +14,7 @@ public protocol Modal {
     func show(animated: Bool)
     func dismiss(animated: Bool)
     var parent: UIViewController { get }
-    var dismissable: Bool { get }
+    var closeAction: (() -> Void)? { get }
 }
 
 extension Modal where Self: UIView {

@@ -32,7 +32,7 @@ public struct SynResponse : Decodable {
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: Key.self)
         self.versionStatus = try container.decode(VersionStatus.self, forKey: .versionStatus)
-        self.message = try container.decode(String.self, forKey: .message)
-        self.details = try container.decode(String.self, forKey: .details)
+        self.message = try container.decodeIfPresent(String.self, forKey: .message)
+        self.details = try container.decodeIfPresent(String.self, forKey: .details)
     }
 }
