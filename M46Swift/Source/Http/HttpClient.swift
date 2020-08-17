@@ -9,10 +9,10 @@
 import Foundation
 
 public class HttpClient {
-    private let session = URLSession(configuration: .default)
+    private var session = URLSession(configuration: .default)
     private let system = System()
     private let baseURL: String
-    
+
     enum Error : Swift.Error {
         case malformedURL
     }
@@ -20,12 +20,17 @@ public class HttpClient {
     public required init(baseURL: String = "") {
         self.baseURL = baseURL
     }
+    
+    public func timeout(seconds: Int) {
+        let config = session.configuration
+        config.timeoutIntervalForRequest = TimeInterval(seconds)
+        session = URLSession(configuration: config)
+    }
 
     public func send<T : HttpRequest>(_ request: T, token: String? = nil,
                            _ completion: @escaping ResultCallback<T.Response>) {
         do {
             let urlReq = try createURLRequest(request, token: token)
-            Log.info("request: \(urlReq)")
 
             let task = session.dataTask(with: urlReq) { (data, response, error) in
                 if let err = error {
@@ -36,8 +41,7 @@ public class HttpClient {
                 if let data = data, let response = response as? HTTPURLResponse {
 
                     do {
-                        let raw = String(decoding: data, as: UTF8.self)
-                        Log.debug("raw: \(raw)")
+                        // let raw = String(decoding: data, as: UTF8.self)
                         let responseData = try JSONDecoder().decode(T.Response.self, from: data)
                         completion(.success(responseData))
                     } catch {
