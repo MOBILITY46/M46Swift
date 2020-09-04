@@ -4,7 +4,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'M46Swift'
-  s.version          = '1.4.14'
+  s.version          = '1.4.15'
   s.summary          = 'iOS modules'
   s.description      = 'A collection of swift modules used my Mobility46'
 
