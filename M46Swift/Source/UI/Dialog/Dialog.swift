@@ -23,6 +23,16 @@ public class Dialog : UIView, Modal {
         initialize(parent, title, text, footer)
     }
     
+    public convenience init(parent: UIViewController, content: UIView, width: CGFloat?, height: CGFloat?) {
+        self.init(frame: UIScreen.main.bounds)
+        
+        if let w = width, let h = height {
+            initialize(parent, content: content, width: w, height: h)
+        } else {
+            initialize(parent, content: content, width: UIScreen.main.bounds.width - 32, height: UIScreen.main.bounds.height - 200)
+        }
+    }
+    
     override init(frame: CGRect) {
         self.parent = UIViewController()
         super.init(frame: frame)
@@ -84,6 +94,36 @@ public class Dialog : UIView, Modal {
         dialogView.frame.size = CGSize(width: dialogViewWidth, height: dialogViewHeight)
         dialogView.backgroundColor = UIColor.white
         dialogView.layer.cornerRadius = 6
+        addSubview(dialogView)
+    }
+    
+    func initialize(_ parent: UIViewController, content: UIView, width: CGFloat, height: CGFloat) {
+        self.parent = parent
+        
+
+        dialogView.clipsToBounds = true
+        
+        background.frame = frame
+        background.backgroundColor = UIColor.black
+        background.alpha = 0.6
+        background.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didClose)))
+        addSubview(background)
+        
+
+        dialogView.frame.origin = CGPoint(x: 32, y: frame.height)
+        dialogView.frame.size = CGSize(width: width, height: height)
+        dialogView.backgroundColor = UIColor.white
+        dialogView.layer.cornerRadius = 6
+
+        dialogView.addSubview(content)
+        
+        content.translatesAutoresizingMaskIntoConstraints = false
+        let top = NSLayoutConstraint(item: content, attribute: .top, relatedBy: .equal, toItem: dialogView, attribute: .top, multiplier: 1, constant: 0)
+        let right = NSLayoutConstraint(item: content, attribute: .right, relatedBy: .equal, toItem: dialogView, attribute: .right, multiplier: 1, constant: 0)
+        let bottom = NSLayoutConstraint(item: content, attribute: .bottom, relatedBy: .equal, toItem: dialogView, attribute: .bottom, multiplier: 1, constant: 0)
+        let left = NSLayoutConstraint(item: content, attribute: .left, relatedBy: .equal, toItem: dialogView, attribute: .left, multiplier: 1, constant: 0)
+        dialogView.addConstraints([top, right, bottom, left])
+        
         addSubview(dialogView)
     }
     

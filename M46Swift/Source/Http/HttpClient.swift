@@ -41,7 +41,8 @@ public class HttpClient {
                 if let data = data, let response = response as? HTTPURLResponse {
 
                     do {
-                        // let raw = String(decoding: data, as: UTF8.self)
+                        let raw = String(decoding: data, as: UTF8.self)
+                        Log.debug("RAW: \(raw)")
                         let responseData = try JSONDecoder().decode(T.Response.self, from: data)
                         completion(.success(responseData))
                     } catch {

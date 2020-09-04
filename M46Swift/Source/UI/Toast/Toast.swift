@@ -47,6 +47,7 @@ public class Toast : UIView {
         let lbl = UILabel()
         lbl.text = message
         lbl.textColor = .white
+        lbl.numberOfLines = 0
         return lbl
     }()
     
@@ -67,7 +68,6 @@ public class Toast : UIView {
         self.message = message
         self.type = type
         super.init(frame: .zero)
-        initialize()
     }
     
     private func initialize() {
@@ -87,9 +87,14 @@ public class Toast : UIView {
     
     public func show() {
         DispatchQueue.main.async {
-            guard let keyWindow = UIApplication.shared.keyWindow else {
-                return
-            }
+            self.initialize()
+            guard let keyWindow = UIApplication.shared.connectedScenes
+                .filter({ $0.activationState == .foregroundActive })
+                .map({ $0 as? UIWindowScene })
+                .compactMap({ $0 })
+                .first??.windows
+                .filter({ $0.isKeyWindow }).first else { return }
+            
             self.configureConstraints(keyWindow)
             UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseIn, animations: {
                 self.alpha = 0.8
