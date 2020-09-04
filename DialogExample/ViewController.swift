@@ -17,19 +17,19 @@ class ViewController: UIViewController {
         let v = UIView(frame: .zero)
         v.backgroundColor = .red
         
-        let lbl = UILabel()
-        lbl.translatesAutoresizingMaskIntoConstraints = false
-        lbl.text = "THIS IS CONTENT!"
-        lbl.font = .boldSystemFont(ofSize: 30)
-        lbl.textColor = .black
-        v.addSubview(lbl)
+        let btn = UIButton()
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.setTitle("Close", for: .normal)
+        v.addSubview(btn)
         
-        let x = NSLayoutConstraint(item: lbl, attribute: .centerX, relatedBy: .equal, toItem: v, attribute: .centerX, multiplier: 1, constant: 0)
-        let y = NSLayoutConstraint(item: lbl, attribute: .centerY, relatedBy: .equal, toItem: v, attribute: .centerY, multiplier: 1, constant: 0)
+        let x = NSLayoutConstraint(item: btn, attribute: .centerX, relatedBy: .equal, toItem: v, attribute: .centerX, multiplier: 1, constant: 0)
+        let y = NSLayoutConstraint(item: btn, attribute: .centerY, relatedBy: .equal, toItem: v, attribute: .centerY, multiplier: 1, constant: 0)
         
         v.addConstraints([x, y])
         
         let dialog = Dialog(parent: self, content: v, width: nil, height: nil)
+        
+        dialog.addCloseTarget(btn: btn)
         dialog.show(animated: true)
         // Do any additional setup after loading the view.
     }
