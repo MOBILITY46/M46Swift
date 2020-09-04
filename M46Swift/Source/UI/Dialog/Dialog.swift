@@ -127,7 +127,7 @@ public class Dialog : UIView, Modal {
         addSubview(dialogView)
     }
     
-    func addCloseTarget(button: UIButton) {
+    public func addCloseTarget(button: UIButton) {
         button.addTarget(self, action: #selector(Self.didClose), for: .touchUpInside)
     }
     
