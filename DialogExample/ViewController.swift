@@ -29,7 +29,6 @@ class ViewController: UIViewController {
         
         let dialog = Dialog(parent: self, content: v, width: nil, height: nil)
         
-        dialog.addCloseTarget(btn: btn)
         dialog.show(animated: true)
         // Do any additional setup after loading the view.
     }
