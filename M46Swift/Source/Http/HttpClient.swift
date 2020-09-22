@@ -85,7 +85,10 @@ public class HttpClient {
         urlReq.addValue("application/json", forHTTPHeaderField: "content-type")
         urlReq.addValue(system.description, forHTTPHeaderField: "user-agent")
         urlReq.addValue(UUID().uuidString, forHTTPHeaderField: "x-request-id")
-        urlReq.addValue(Locale.current.languageCode, forHTTPHeaderField: "accept-language")
+        
+        if let lang = Locale.current.languageCode {
+            urlReq.addValue(lang, forHTTPHeaderField: "accept-language")
+        }
         
         if let token = token {
             urlReq.addValue("Token \(token)", forHTTPHeaderField: "authorization")
