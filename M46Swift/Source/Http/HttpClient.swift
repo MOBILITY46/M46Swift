@@ -43,7 +43,7 @@ public class HttpClient {
                 if let data = data, let response = response as? HTTPURLResponse {
 
                     do {
-                        if debug {
+                        if self.debug {
                             let raw = String(decoding: data, as: UTF8.self)
                             Log.debug("RAW: \(raw)")
                         }
