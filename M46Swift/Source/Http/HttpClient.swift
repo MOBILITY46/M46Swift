@@ -12,6 +12,8 @@ public class HttpClient {
     private var session = URLSession(configuration: .default)
     private let system = System()
     private let baseURL: String
+    
+    var debug: Bool = false
 
     enum Error : Swift.Error {
         case malformedURL
@@ -41,8 +43,10 @@ public class HttpClient {
                 if let data = data, let response = response as? HTTPURLResponse {
 
                     do {
-                        let raw = String(decoding: data, as: UTF8.self)
-                        Log.debug("RAW: \(raw)")
+                        if debug {
+                            let raw = String(decoding: data, as: UTF8.self)
+                            Log.debug("RAW: \(raw)")
+                        }
                         let responseData = try JSONDecoder().decode(T.Response.self, from: data)
                         completion(.success(responseData))
                     } catch {
